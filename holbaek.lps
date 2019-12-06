@@ -1,0 +1,793 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="11"/>
+    <BuildModes Active="Default">
+      <SessionMatrixOptions Count="1">
+        <Item1 ID="551830060583" Modes="Default" Type="IDEMacro" MacroName="LCLWidgetType" Value="win32"/>
+      </SessionMatrixOptions>
+    </BuildModes>
+    <Units Count="78">
+      <Unit0>
+        <Filename Value="holbaek.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="32" Y="7"/>
+        <UsageCount Value="51"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="holbaekmain.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="MainForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <TopLine Value="446"/>
+        <CursorPos X="3" Y="451"/>
+        <UsageCount Value="51"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="import_vig.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ImportVigForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Import_Vig"/>
+        <EditorIndex Value="3"/>
+        <TopLine Value="33"/>
+        <CursorPos X="15" Y="33"/>
+        <UsageCount Value="46"/>
+        <Bookmarks Count="1">
+          <Item0 Y="443"/>
+        </Bookmarks>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="maindata.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="MainDataModule"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <EditorIndex Value="7"/>
+        <TopLine Value="10"/>
+        <CursorPos X="23" Y="19"/>
+        <UsageCount Value="36"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="fletfil.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormFletFil"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="FletFil"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="91"/>
+        <CursorPos X="16" Y="106"/>
+        <UsageCount Value="36"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="postnr.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="PostNrForm"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="PostNr"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="93"/>
+        <CursorPos X="13" Y="112"/>
+        <UsageCount Value="36"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="checkdatabase.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="CheckDatabaseForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="CheckDatabase"/>
+        <EditorIndex Value="5"/>
+        <TopLine Value="664"/>
+        <CursorPos X="10" Y="695"/>
+        <UsageCount Value="30"/>
+        <Loaded Value="True"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="periodedef.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="PeriodeDefForm"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="PeriodeDef"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="36"/>
+        <CursorPos X="7" Y="51"/>
+        <UsageCount Value="30"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="unit1.pas"/>
+        <UnitName Value="Unit1"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="6" Y="11"/>
+        <UsageCount Value="20"/>
+      </Unit8>
+      <Unit9>
+        <Filename Value="C:\Holbaek_Old\holbaekmain.lfm"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="10"/>
+        <DefaultSyntaxHighlighter Value="LFM"/>
+      </Unit9>
+      <Unit10>
+        <Filename Value="C:\Holbaek_Old\holbaekmain.pas"/>
+        <ComponentName Value="MainForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="304"/>
+        <CursorPos Y="333"/>
+        <UsageCount Value="11"/>
+      </Unit10>
+      <Unit11>
+        <Filename Value="C:\Holbaek_Old\fkonti.pas"/>
+        <UnitName Value="FKonti"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="10"/>
+      </Unit11>
+      <Unit12>
+        <Filename Value="fkonti.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormKontigentSeAendre"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="FKonti"/>
+        <EditorIndex Value="1"/>
+        <CursorPos X="26" Y="18"/>
+        <UsageCount Value="21"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit12>
+      <Unit13>
+        <Filename Value="holbaekconst.pas"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="18" Y="10"/>
+        <UsageCount Value="12"/>
+      </Unit13>
+      <Unit14>
+        <Filename Value="C:\lazarus\components\lazutils\lazutf8.pas"/>
+        <UnitName Value="LazUTF8"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="11"/>
+      </Unit14>
+      <Unit15>
+        <Filename Value="C:\lazarus\fpc\3.0.4\source\rtl\objpas\sysutils\osutilsh.inc"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="3"/>
+        <UsageCount Value="10"/>
+      </Unit15>
+      <Unit16>
+        <Filename Value="C:\lazarus\lcl\include\brush.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="289"/>
+        <CursorPos Y="313"/>
+        <UsageCount Value="10"/>
+      </Unit16>
+      <Unit17>
+        <Filename Value="C:\lazarus\lcl\include\menu.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="209"/>
+        <CursorPos X="26" Y="224"/>
+        <UsageCount Value="10"/>
+      </Unit17>
+      <Unit18>
+        <Filename Value="C:\lazarus\lcl\include\customform.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="3165"/>
+        <CursorPos Y="3184"/>
+        <UsageCount Value="10"/>
+      </Unit18>
+      <Unit19>
+        <Filename Value="C:\lazarus\lcl\lclclasses.pp"/>
+        <UnitName Value="LCLClasses"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="122"/>
+        <CursorPos Y="139"/>
+        <UsageCount Value="10"/>
+      </Unit19>
+      <Unit20>
+        <Filename Value="C:\Users\Claus\AppData\Local\lazarus\onlinepackagemanager\packages\zeosdbo\src\dbc\ZDbcSqLiteUtils.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="223"/>
+        <CursorPos X="16" Y="236"/>
+        <UsageCount Value="10"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit20>
+      <Unit21>
+        <Filename Value="C:\HolbaekOld\holbaekmain.pas"/>
+        <ComponentName Value="MainForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="371"/>
+        <CursorPos X="3" Y="373"/>
+        <UsageCount Value="16"/>
+      </Unit21>
+      <Unit22>
+        <Filename Value="Extra\tparadoxdataset\paradoxds.pas"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="29" Y="15"/>
+        <UsageCount Value="10"/>
+      </Unit22>
+      <Unit23>
+        <Filename Value="C:\Users\Claus\AppData\Local\lazarus\onlinepackagemanager\packages\tparadoxdataset\paradoxds.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="444"/>
+        <CursorPos Y="459"/>
+        <UsageCount Value="12"/>
+      </Unit23>
+      <Unit24>
+        <Filename Value="C:\lazarus\lcl\grids.pas"/>
+        <UnitName Value="Grids"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="9886"/>
+        <CursorPos X="21" Y="9898"/>
+        <UsageCount Value="12"/>
+      </Unit24>
+      <Unit25>
+        <Filename Value="database_see.pas"/>
+        <ComponentName Value="DatabaseSeeForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="82"/>
+        <CursorPos X="65" Y="110"/>
+        <UsageCount Value="14"/>
+      </Unit25>
+      <Unit26>
+        <Filename Value="C:\HolbaekOld\database_see.pas"/>
+        <ComponentName Value="DatabaseSeeForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="28" Y="9"/>
+        <UsageCount Value="10"/>
+      </Unit26>
+      <Unit27>
+        <Filename Value="C:\HolbaekOld\holbaek_2015_0103\database_see.lfm"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="10"/>
+        <DefaultSyntaxHighlighter Value="LFM"/>
+      </Unit27>
+      <Unit28>
+        <Filename Value="C:\HolbaekOld\holbaek_2015_0103\database_see.pas"/>
+        <ComponentName Value="DatabaseSeeForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="55" Y="12"/>
+        <UsageCount Value="10"/>
+      </Unit28>
+      <Unit29>
+        <Filename Value="C:\lazarus\components\paradox\regparadox.pp"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="65"/>
+        <UsageCount Value="10"/>
+      </Unit29>
+      <Unit30>
+        <Filename Value="C:\HolbaekOld\medoply.pas"/>
+        <ComponentName Value="MedlemForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="122"/>
+        <CursorPos X="3" Y="138"/>
+        <UsageCount Value="10"/>
+      </Unit30>
+      <Unit31>
+        <Filename Value="medoply.pas"/>
+        <ComponentName Value="MedlemForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="6"/>
+        <TopLine Value="123"/>
+        <CursorPos X="9" Y="132"/>
+        <UsageCount Value="16"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit31>
+      <Unit32>
+        <Filename Value="C:\HolbaekOld\skiftforening.pas"/>
+        <UnitName Value="SkiftForening"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="163"/>
+        <CursorPos X="28" Y="175"/>
+        <UsageCount Value="11"/>
+      </Unit32>
+      <Unit33>
+        <Filename Value="skiftforening.pas"/>
+        <UnitName Value="SkiftForening"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="29" Y="15"/>
+        <UsageCount Value="10"/>
+      </Unit33>
+      <Unit34>
+        <Filename Value="ftpshare.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="624"/>
+        <CursorPos X="16" Y="640"/>
+        <UsageCount Value="10"/>
+      </Unit34>
+      <Unit35>
+        <Filename Value="clmmessage.pas"/>
+        <ComponentName Value="clmMessageDlgForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="clmMessage"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="45"/>
+        <CursorPos X="5" Y="73"/>
+        <UsageCount Value="10"/>
+      </Unit35>
+      <Unit36>
+        <Filename Value="C:\HolbaekOld\clmmessage.lfm"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="10"/>
+        <DefaultSyntaxHighlighter Value="LFM"/>
+      </Unit36>
+      <Unit37>
+        <Filename Value="C:\HolbaekOld\clmmessage.pas"/>
+        <ComponentName Value="clmMessageDlgForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="clmMessage"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="10"/>
+      </Unit37>
+      <Unit38>
+        <Filename Value="C:\HolbaekOld\database_see.lfm"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="10"/>
+        <DefaultSyntaxHighlighter Value="LFM"/>
+      </Unit38>
+      <Unit39>
+        <Filename Value="findmed.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="138"/>
+        <CursorPos X="43" Y="154"/>
+        <UsageCount Value="11"/>
+      </Unit39>
+      <Unit40>
+        <Filename Value="showfind.pas"/>
+        <UnitName Value="ShowFind"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="110"/>
+        <CursorPos X="24" Y="122"/>
+        <UsageCount Value="11"/>
+      </Unit40>
+      <Unit41>
+        <Filename Value="superprint.pas"/>
+        <ComponentName Value="SuperPrintForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="SuperPrint"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="10" Y="12"/>
+        <UsageCount Value="11"/>
+      </Unit41>
+      <Unit42>
+        <Filename Value="superprint.lfm"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="10"/>
+        <DefaultSyntaxHighlighter Value="LFM"/>
+      </Unit42>
+      <Unit43>
+        <Filename Value="Extra\7_kcontrols_1.7\source\kmemortf.pas"/>
+        <UnitName Value="KMemoRTF"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="4014"/>
+        <CursorPos X="10" Y="4030"/>
+        <UsageCount Value="10"/>
+      </Unit43>
+      <Unit44>
+        <Filename Value="C:\HolbaekOld\Aktivitet_Masse.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="90"/>
+        <CursorPos X="3" Y="106"/>
+        <UsageCount Value="10"/>
+      </Unit44>
+      <Unit45>
+        <Filename Value="Aktivitet_Masse.pas"/>
+        <ComponentName Value="AktivitetMasseForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="772"/>
+        <CursorPos X="3" Y="779"/>
+        <UsageCount Value="11"/>
+      </Unit45>
+      <Unit46>
+        <Filename Value="Extra\clmCombo_v1.0\clmpackage.pas"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="11"/>
+      </Unit46>
+      <Unit47>
+        <Filename Value="Extra\clmCombo_v1.0\clmcombobox.pas"/>
+        <UnitName Value="clmCombobox"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="263"/>
+        <CursorPos Y="284"/>
+        <UsageCount Value="10"/>
+      </Unit47>
+      <Unit48>
+        <Filename Value="C:\HolbaekOld\kassekladde.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="243"/>
+        <CursorPos X="3" Y="259"/>
+        <UsageCount Value="10"/>
+      </Unit48>
+      <Unit49>
+        <Filename Value="kassekladde.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="363"/>
+        <CursorPos X="17" Y="374"/>
+        <UsageCount Value="11"/>
+      </Unit49>
+      <Unit50>
+        <Filename Value="C:\HolbaekOld\sekonto.pas"/>
+        <ComponentName Value="SeKontoForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="SeKonto"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="116"/>
+        <CursorPos X="3" Y="132"/>
+        <UsageCount Value="11"/>
+      </Unit50>
+      <Unit51>
+        <Filename Value="C:\HolbaekOld\konmanuel.pas"/>
+        <UnitName Value="KonManuel"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="112"/>
+        <CursorPos X="3" Y="128"/>
+        <UsageCount Value="10"/>
+      </Unit51>
+      <Unit52>
+        <Filename Value="C:\HolbaekOld\konaktgen.pas"/>
+        <UnitName Value="KonAktGen"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="85"/>
+        <CursorPos X="3" Y="101"/>
+        <UsageCount Value="10"/>
+      </Unit52>
+      <Unit53>
+        <Filename Value="C:\HolbaekOld\kontedittekst.pas"/>
+        <UnitName Value="KontEditTekst"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="58"/>
+        <CursorPos X="23" Y="74"/>
+        <UsageCount Value="10"/>
+      </Unit53>
+      <Unit54>
+        <Filename Value="kontedittekst.pas"/>
+        <UnitName Value="KontEditTekst"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="66"/>
+        <CursorPos X="30" Y="82"/>
+        <UsageCount Value="10"/>
+      </Unit54>
+      <Unit55>
+        <Filename Value="fletfil.lfm"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="346"/>
+        <CursorPos X="28" Y="356"/>
+        <UsageCount Value="11"/>
+        <DefaultSyntaxHighlighter Value="LFM"/>
+      </Unit55>
+      <Unit56>
+        <Filename Value="C:\HolbaekOld\option.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="31"/>
+        <CursorPos X="3" Y="47"/>
+        <UsageCount Value="10"/>
+      </Unit56>
+      <Unit57>
+        <Filename Value="importerpostnr.pas"/>
+        <ComponentName Value="ImporterPostNrForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="ImporterPostNr"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="26" Y="17"/>
+        <UsageCount Value="11"/>
+      </Unit57>
+      <Unit58>
+        <Filename Value="C:\lazarus\fpc\3.0.4\source\packages\fcl-base\src\csvdocument.pp"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="140"/>
+        <CursorPos X="3" Y="140"/>
+        <UsageCount Value="10"/>
+      </Unit58>
+      <Unit59>
+        <Filename Value="C:\HolbaekOld\kontooversigt.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="59"/>
+        <CursorPos X="39" Y="68"/>
+        <UsageCount Value="10"/>
+      </Unit59>
+      <Unit60>
+        <Filename Value="kontooversigt.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="66"/>
+        <CursorPos X="30" Y="79"/>
+        <UsageCount Value="10"/>
+      </Unit60>
+      <Unit61>
+        <Filename Value="C:\HolbaekOld\periodedef.pas"/>
+        <UnitName Value="PeriodeDef"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="52"/>
+        <CursorPos X="14" Y="56"/>
+        <UsageCount Value="10"/>
+      </Unit61>
+      <Unit62>
+        <Filename Value="C:\HolbaekOld\momsdef.pas"/>
+        <ComponentName Value="MomsDefForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="MomsDef"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="51"/>
+        <CursorPos X="28" Y="60"/>
+        <UsageCount Value="10"/>
+      </Unit62>
+      <Unit63>
+        <Filename Value="C:\HolbaekOld\rabatdef.pas"/>
+        <UnitName Value="RabatDef"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="56"/>
+        <CursorPos X="3" Y="72"/>
+        <UsageCount Value="10"/>
+      </Unit63>
+      <Unit64>
+        <Filename Value="konaudsk.pas"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="10"/>
+      </Unit64>
+      <Unit65>
+        <Filename Value="C:\HolbaekOld\okomaerke.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="47"/>
+        <CursorPos X="3" Y="63"/>
+        <UsageCount Value="10"/>
+      </Unit65>
+      <Unit66>
+        <Filename Value="C:\HolbaekOld\kassekladdedef.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="48"/>
+        <CursorPos X="3" Y="64"/>
+        <UsageCount Value="10"/>
+      </Unit66>
+      <Unit67>
+        <Filename Value="C:\HolbaekOld\def_aktiviteter.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="55"/>
+        <CursorPos X="3" Y="71"/>
+        <UsageCount Value="10"/>
+      </Unit67>
+      <Unit68>
+        <Filename Value="C:\HolbaekOld\def_priskategori.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="47"/>
+        <CursorPos X="3" Y="63"/>
+        <UsageCount Value="10"/>
+      </Unit68>
+      <Unit69>
+        <Filename Value="def_priskategori.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="53"/>
+        <CursorPos X="12" Y="67"/>
+        <UsageCount Value="10"/>
+      </Unit69>
+      <Unit70>
+        <Filename Value="C:\HolbaekOld\def_maerker.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="44"/>
+        <CursorPos X="3" Y="60"/>
+        <UsageCount Value="10"/>
+      </Unit70>
+      <Unit71>
+        <Filename Value="backup\backup.pas"/>
+        <ComponentName Value="BackupForm"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="26" Y="18"/>
+        <UsageCount Value="20"/>
+      </Unit71>
+      <Unit72>
+        <Filename Value="backup.lfm"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="10"/>
+        <DefaultSyntaxHighlighter Value="LFM"/>
+      </Unit72>
+      <Unit73>
+        <Filename Value="backup.pas"/>
+        <ComponentName Value="BackupForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="10" Y="9"/>
+        <UsageCount Value="10"/>
+      </Unit73>
+      <Unit74>
+        <Filename Value="C:\Users\Claus\AppData\Local\lazarus\onlinepackagemanager\packages\zeosdbo\src\component\ZAbstractConnection.pas"/>
+        <EditorIndex Value="4"/>
+        <TopLine Value="962"/>
+        <CursorPos Y="978"/>
+        <UsageCount Value="12"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit74>
+      <Unit75>
+        <Filename Value="C:\lazarus\fpc\3.0.4\source\rtl\objpas\sysutils\filutilh.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="114"/>
+        <CursorPos X="10" Y="130"/>
+        <UsageCount Value="10"/>
+      </Unit75>
+      <Unit76>
+        <Filename Value="C:\Users\Claus\AppData\Local\lazarus\onlinepackagemanager\packages\jujiboutils\src\jdblabeleddateedit.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="250"/>
+        <CursorPos Y="266"/>
+        <UsageCount Value="10"/>
+      </Unit76>
+      <Unit77>
+        <Filename Value="Extra\clmCombo_v1.0\clmdbdataedit.pas"/>
+        <UnitName Value="clmDBDataEdit"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="38"/>
+        <CursorPos X="18" Y="38"/>
+        <UsageCount Value="11"/>
+        <Loaded Value="True"/>
+      </Unit77>
+    </Units>
+    <JumpHistory Count="30" HistoryIndex="29">
+      <Position1>
+        <Filename Value="import_vig.pas"/>
+        <Caret Line="1482" Column="26" TopLine="1456"/>
+      </Position1>
+      <Position2>
+        <Filename Value="import_vig.pas"/>
+        <Caret Line="1469" Column="46" TopLine="1456"/>
+      </Position2>
+      <Position3>
+        <Filename Value="import_vig.pas"/>
+        <Caret Line="1475" Column="17" TopLine="1456"/>
+      </Position3>
+      <Position4>
+        <Filename Value="import_vig.pas"/>
+        <Caret Line="1467" TopLine="1456"/>
+      </Position4>
+      <Position5>
+        <Filename Value="import_vig.pas"/>
+        <Caret Line="1501" Column="61" TopLine="1493"/>
+      </Position5>
+      <Position6>
+        <Filename Value="import_vig.pas"/>
+        <Caret Line="1508" Column="119" TopLine="1484"/>
+      </Position6>
+      <Position7>
+        <Filename Value="import_vig.pas"/>
+        <Caret Line="1444" TopLine="1431"/>
+      </Position7>
+      <Position8>
+        <Filename Value="import_vig.pas"/>
+        <Caret Line="1456" Column="49" TopLine="1441"/>
+      </Position8>
+      <Position9>
+        <Filename Value="import_vig.pas"/>
+        <Caret Line="1444" TopLine="1438"/>
+      </Position9>
+      <Position10>
+        <Filename Value="import_vig.pas"/>
+        <Caret Line="1446" TopLine="1438"/>
+      </Position10>
+      <Position11>
+        <Filename Value="import_vig.pas"/>
+        <Caret Line="1448" TopLine="1438"/>
+      </Position11>
+      <Position12>
+        <Filename Value="import_vig.pas"/>
+        <Caret Line="1451" TopLine="1438"/>
+      </Position12>
+      <Position13>
+        <Filename Value="import_vig.pas"/>
+        <Caret Line="1449" TopLine="1438"/>
+      </Position13>
+      <Position14>
+        <Filename Value="import_vig.pas"/>
+        <Caret Line="1451" TopLine="1438"/>
+      </Position14>
+      <Position15>
+        <Filename Value="import_vig.pas"/>
+        <Caret Line="1450" TopLine="1438"/>
+      </Position15>
+      <Position16>
+        <Filename Value="import_vig.pas"/>
+        <Caret Line="1468" Column="19" TopLine="1442"/>
+      </Position16>
+      <Position17>
+        <Filename Value="import_vig.pas"/>
+        <Caret Line="1497" Column="36" TopLine="1484"/>
+      </Position17>
+      <Position18>
+        <Filename Value="holbaekmain.pas"/>
+        <Caret Line="237" TopLine="221"/>
+      </Position18>
+      <Position19>
+        <Filename Value="holbaekmain.pas"/>
+        <Caret Line="420" Column="3" TopLine="414"/>
+      </Position19>
+      <Position20>
+        <Filename Value="fkonti.pas"/>
+        <Caret Line="137" Column="15" TopLine="130"/>
+      </Position20>
+      <Position21>
+        <Filename Value="holbaekmain.pas"/>
+        <Caret Line="420" Column="3" TopLine="414"/>
+      </Position21>
+      <Position22>
+        <Filename Value="holbaekmain.pas"/>
+        <Caret Line="451" Column="3" TopLine="446"/>
+      </Position22>
+      <Position23>
+        <Filename Value="medoply.pas"/>
+        <Caret Line="447" Column="14" TopLine="416"/>
+      </Position23>
+      <Position24>
+        <Filename Value="fkonti.pas"/>
+        <Caret Line="139" Column="8" TopLine="130"/>
+      </Position24>
+      <Position25>
+        <Filename Value="fkonti.pas"/>
+        <Caret Line="140" Column="8" TopLine="131"/>
+      </Position25>
+      <Position26>
+        <Filename Value="fkonti.pas"/>
+        <Caret Line="139" Column="8" TopLine="130"/>
+      </Position26>
+      <Position27>
+        <Filename Value="fkonti.pas"/>
+        <Caret Line="107" Column="25" TopLine="99"/>
+      </Position27>
+      <Position28>
+        <Filename Value="fkonti.pas"/>
+        <Caret Line="106" Column="25" TopLine="98"/>
+      </Position28>
+      <Position29>
+        <Filename Value="fkonti.pas"/>
+        <Caret Line="114" Column="33" TopLine="111"/>
+      </Position29>
+      <Position30>
+        <Filename Value="fkonti.pas"/>
+        <Caret Line="18" Column="11"/>
+      </Position30>
+    </JumpHistory>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes Count="0" ActiveMode=""/>
+    </RunParams>
+  </ProjectSession>
+  <Debugging>
+    <BreakPoints Count="1">
+      <Item1>
+        <Kind Value="bpkSource"/>
+        <WatchScope Value="wpsLocal"/>
+        <WatchKind Value="wpkWrite"/>
+        <Source Value="import_vig.pas"/>
+        <Line Value="1478"/>
+      </Item1>
+    </BreakPoints>
+  </Debugging>
+</CONFIG>

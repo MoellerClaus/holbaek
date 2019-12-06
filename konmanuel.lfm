@@ -1,0 +1,698 @@
+object KontingentManuelForm: TKontingentManuelForm
+  Left = 708
+  Height = 636
+  Top = 249
+  Width = 656
+  Caption = 'Oprettelse af indbetalingskort...'
+  ClientHeight = 636
+  ClientWidth = 656
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  LCLVersion = '2.0.6.0'
+  object ToolBar1: TToolBar
+    Left = 0
+    Height = 26
+    Top = 0
+    Width = 656
+    Caption = 'ToolBar1'
+    EdgeBorders = [ebTop, ebBottom]
+    Images = ImageList1
+    TabOrder = 0
+    object ToolButton1: TToolButton
+      Left = 1
+      Top = 2
+      Action = Luk
+    end
+    object ToolButton2: TToolButton
+      Left = 24
+      Top = 2
+      Action = GenererIndbetalingskort
+    end
+    object ToolButton3: TToolButton
+      Left = 47
+      Top = 2
+      Action = Help
+    end
+  end
+  object PageControl1: TPageControl
+    Left = 0
+    Height = 288
+    Top = 26
+    Width = 656
+    ActivePage = TabSheet1
+    Align = alTop
+    Images = ImageList1
+    TabIndex = 0
+    TabOrder = 1
+    object TabSheet1: TTabSheet
+      Caption = 'Normalt'
+      ClientHeight = 260
+      ClientWidth = 648
+      ImageIndex = 2
+      object PageColor1: TShape
+        Left = 37
+        Height = 65
+        Top = 17
+        Width = 65
+        Brush.Color = clInfoBk
+        Pen.Style = psClear
+      end
+      object GroupBox1: TGroupBox
+        Left = 0
+        Height = 113
+        Top = 8
+        Width = 257
+        Caption = ' For hvem '
+        ClientHeight = 93
+        ClientWidth = 253
+        TabOrder = 0
+        object RadioMedlem: TRadioButton
+          Left = 13
+          Height = 19
+          Hint = 'Ud fra medlemmer'
+          Top = 0
+          Width = 64
+          Caption = 'Medlem'
+          Checked = True
+          OnClick = RadioMedlemClick
+          TabOrder = 1
+          TabStop = True
+        end
+        object RadioMaerke: TRadioButton
+          Left = 96
+          Height = 19
+          Top = 0
+          Width = 57
+          Caption = 'Mærke'
+          OnClick = RadioMaerkeClick
+          TabOrder = 0
+        end
+        object ComboPeriode: TclmCombobox
+          Left = 13
+          Height = 22
+          Top = 40
+          Width = 67
+          Columns = <>
+          ItemHeight = 16
+          OnChange = ComboPeriodeChange
+          TabOrder = 2
+        end
+        object Label2: TLabel
+          Left = 13
+          Height = 15
+          Top = 24
+          Width = 43
+          Caption = 'Periode:'
+          FocusControl = ComboPeriode
+          ParentColor = False
+        end
+        object ComboMedlem: TclmCombobox
+          Left = 96
+          Height = 22
+          Top = 40
+          Width = 136
+          Columns = <>
+          ItemHeight = 16
+          OnChange = ComboMedlemChange
+          TabOrder = 3
+        end
+        object Label3: TLabel
+          Left = 96
+          Height = 15
+          Top = 24
+          Width = 112
+          Caption = 'Søg medlem/mærke:'
+          ParentColor = False
+        end
+        object EditMedNr: TJLabeledIntegerEdit
+          Left = 96
+          Height = 23
+          Top = 64
+          Width = 48
+          DisplayFormat = '0'
+          Value = 1
+          NegativeColor = clDefault
+          Alignment = taRightJustify
+          EditLabel.Height = 15
+          EditLabel.Width = 44
+          EditLabel.Caption = 'Med. nr:'
+          EditLabel.ParentColor = False
+          LabelPosition = lpLeft
+          LabelSpacing = 38
+          TabOrder = 4
+          OnExit = EditMedNrExit
+        end
+        object SpeedFindMedlem: TSpeedButton
+          Left = 162
+          Height = 22
+          Top = 64
+          Width = 23
+          Action = FindMedlem
+        end
+      end
+      object GroupBox2: TGroupBox
+        Left = 0
+        Height = 137
+        Top = 120
+        Width = 256
+        Caption = ' Pris '
+        ClientHeight = 117
+        ClientWidth = 252
+        TabOrder = 1
+        object ComboPrisKategori: TclmCombobox
+          Left = 12
+          Height = 22
+          Hint = 'Liste med oprettede priser'
+          Top = 16
+          Width = 220
+          Columns = <>
+          ItemHeight = 16
+          OnChange = ComboPrisKategoriChange
+          TabOrder = 0
+        end
+        object Label4: TLabel
+          Left = 12
+          Height = 15
+          Top = 0
+          Width = 65
+          Caption = '&Priskategori:'
+          FocusControl = ComboPrisKategori
+          ParentColor = False
+        end
+        object EditPris: TJLabeledCurrencyEdit
+          Left = 11
+          Height = 23
+          Hint = 'Alternativ pris'
+          Top = 64
+          Width = 61
+          DisplayFormat = '#,0.00'
+          Decimals = 2
+          Value = 100
+          NegativeColor = clDefault
+          Alignment = taRightJustify
+          EditLabel.Height = 15
+          EditLabel.Width = 61
+          EditLabel.Caption = 'Alt. pris:'
+          EditLabel.ParentColor = False
+          TabOrder = 1
+          OnExit = EditPrisExit
+        end
+        object AltTekstEdit: TEdit
+          Left = 80
+          Height = 23
+          Hint = 'Anden tekst som beskriver prisen'
+          Top = 64
+          Width = 152
+          OnExit = AltTekstEditExit
+          TabOrder = 2
+          Text = 'Manuelt fastsat pris'
+        end
+        object Label5: TLabel
+          Left = 80
+          Height = 15
+          Top = 48
+          Width = 149
+          Caption = 'Alternativ beskrivelse af pris:'
+          ParentColor = False
+        end
+        object CheckBoxRabat: TCheckBox
+          Left = 13
+          Height = 19
+          Top = 96
+          Width = 135
+          Caption = 'Udregn. evt. rabbatter'
+          Checked = True
+          OnChange = CheckBoxRabatChange
+          State = cbChecked
+          TabOrder = 3
+        end
+        object SpeedButton1: TSpeedButton
+          Left = 183
+          Height = 22
+          Hint = 'Bestemmer hvilken priskateri som der startes med som default'
+          Top = 94
+          Width = 23
+          Glyph.Data = {
+            36040000424D3604000000000000360000002800000010000000100000000100
+            2000000000000004000064000000640000000000000000000000FFFFFF00FFFF
+            FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+            FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+            FF00FFFFFF00FFFFFF00FFFFFF00317A360A2D753207FFFFFF00FFFFFF00FFFF
+            FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+            FF00FFFFFF00FFFFFF003985400A37833DFF317B37FB2E763307FFFFFF00FFFF
+            FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+            FF00FFFFFF004292490A408E47FF54A35CFF4F9F57FF327C38FE2E773408FFFF
+            FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+            FF004B9E530A499A51FF5BAC64FF77CA82FF74C87EFF51A059FF337D39FE2F78
+            3508FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF0053A9
+            5C0A51A65AFF63B56DFF7ECE89FF7BCC87FF76CA81FF76C981FF52A25AFF347E
+            3AFE30793508FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF005AB4650959B0
+            63FF6BBD76FF84D290FF7AC985FF60B26AFF63B46DFF78C983FF78CB82FF53A3
+            5CFF347F3AFD317A3608FFFFFF00FFFFFF00FFFFFF00FFFFFF005EB969465BB5
+            66E479C986FF80CE8DFF51A65AFC4DA1566F499C518B5CAD67FF7CCC86FF79CB
+            85FF54A45DFF35803BFC317B3708FFFFFF00FFFFFF00FFFFFF00FFFFFF005FBA
+            6A3C5CB666E66DC079FF55AC5F6FFFFFFF00FFFFFF004A9D52915EAE68FF7DCD
+            89FF7CCD87FF56A55FFF36813CFC327C3808FFFFFF00FFFFFF00FFFFFF00FFFF
+            FF005FBB6A435CB76765FFFFFF00FFFFFF00FFFFFF00FFFFFF004B9E53915FAF
+            69FF7FCE8AFF7ECE89FF57A660FF37823DFC337D3908FFFFFF00FFFFFF00FFFF
+            FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF004B9F
+            549160B06AFF81CF8DFF7FCF8BFF58A761FF398540FF347E3A08FFFFFF00FFFF
+            FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+            FF004CA0559162B26CFF82D18FFF7AC885FF57A660FF38843F7BFFFFFF00FFFF
+            FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+            FF00FFFFFF004DA1569163B36DFF5FAF69FF41914979FFFFFF00FFFFFF00FFFF
+            FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+            FF00FFFFFF00FFFFFF004EA257914A9D527FFFFFFF00FFFFFF00FFFFFF00FFFF
+            FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+            FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+            FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+            FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00
+          }
+        end
+      end
+      object GroupBox3: TGroupBox
+        Left = 264
+        Height = 152
+        Top = 8
+        Width = 320
+        Caption = ' Terminer '
+        ClientHeight = 132
+        ClientWidth = 316
+        TabOrder = 2
+        object RadioEngang: TRadioButton
+          Left = 8
+          Height = 19
+          Hint = 'Et indbetalingskort'
+          Top = 0
+          Width = 60
+          Caption = 'Engang'
+          Checked = True
+          OnChange = RadioEngangChange
+          OnClick = RadioEngangClick
+          TabOrder = 1
+          TabStop = True
+        end
+        object RadioLoebende: TRadioButton
+          Left = 144
+          Height = 19
+          Hint = 'Flere indbetalingskort laves'
+          Top = 0
+          Width = 66
+          Caption = 'Løbende'
+          OnClick = RadioLoebendeClick
+          TabOrder = 0
+        end
+        object StartDate: TJLabeledDateEdit
+          Left = 10
+          Height = 23
+          Hint = 'Angiver datoen for hvornår indbtalingskort er udstedt'
+          Top = 39
+          Width = 80
+          DisplayFormat = 'dd-MM-yyyy'
+          Value = 0
+          ButtonWidth = 23
+          EditLabel.Height = 15
+          EditLabel.Width = 80
+          EditLabel.Caption = 'Start:'
+          EditLabel.ParentColor = False
+          LabelSpacing = 1
+          TabOrder = 2
+          OnExit = StartDateExit
+        end
+        object RettidigDate: TJLabeledDateEdit
+          Left = 10
+          Height = 23
+          Top = 80
+          Width = 80
+          DisplayFormat = 'dd-MM-yyyy'
+          Value = 0
+          ButtonWidth = 23
+          EditLabel.Height = 15
+          EditLabel.Width = 80
+          EditLabel.Caption = 'Rettidig:'
+          EditLabel.ParentColor = False
+          LabelSpacing = 1
+          TabOrder = 3
+          OnExit = RettidigDateExit
+        end
+        object IntervalCombo: TComboBox
+          Left = 120
+          Height = 23
+          Hint = 'Interval mellem indbetalingskort'
+          Top = 40
+          Width = 90
+          ItemHeight = 15
+          ItemIndex = 0
+          Items.Strings = (
+            'Manuelt'
+            '7 dage (1 uge)'
+            '14 dage (2 uger)'
+            'Månedlig'
+          )
+          OnChange = IntervalComboChange
+          Style = csDropDownList
+          TabOrder = 4
+          Text = 'Manuelt'
+          Visible = False
+        end
+        object RettidigCombo: TComboBox
+          Left = 120
+          Height = 23
+          Hint = 'Vælg tid til betalingsfrist'
+          Top = 80
+          Width = 90
+          ItemHeight = 15
+          Items.Strings = (
+            '7 dage (1 uge)'
+            '14 dage (2 uger)'
+            '1 måned'
+            '2 måneder'
+            '3 måneder'
+            '4 måneder'
+            '5 måneder'
+            '6 måneder'
+            '7 måneder '
+            '8 måneder'
+            '9 måneder'
+            '10 måneder'
+            '11 måneder'
+            '12 måneder'
+          )
+          OnChange = RettidigComboChange
+          Style = csDropDownList
+          TabOrder = 5
+          Visible = False
+        end
+        object AntalDageIntervalEdit: TJLabeledIntegerEdit
+          Left = 216
+          Height = 23
+          Hint = 'Antal dage mellem indbetalingskort'
+          Top = 40
+          Width = 80
+          DisplayFormat = '0'
+          Value = 30
+          NegativeColor = clDefault
+          Alignment = taRightJustify
+          EditLabel.Height = 15
+          EditLabel.Width = 80
+          EditLabel.Caption = 'Dage interval:'
+          EditLabel.ParentColor = False
+          LabelSpacing = 1
+          TabOrder = 6
+          Visible = False
+        end
+        object IntervalLabel: TLabel
+          Left = 120
+          Height = 15
+          Top = 24
+          Width = 42
+          Caption = 'Interval:'
+          ParentColor = False
+          Visible = False
+        end
+        object RettidigLabel: TLabel
+          Left = 122
+          Height = 15
+          Top = 64
+          Width = 84
+          Caption = 'Dage til rettidig:'
+          ParentColor = False
+          Visible = False
+        end
+        object AntalEdit: TJLabeledIntegerEdit
+          Left = 216
+          Height = 23
+          Hint = 'Angiver antal af indbetalingskort der skal genereres'
+          Top = 80
+          Width = 80
+          DisplayFormat = '0'
+          Value = 1
+          NegativeColor = clDefault
+          Alignment = taRightJustify
+          EditLabel.Height = 15
+          EditLabel.Width = 80
+          EditLabel.Caption = 'Antal:'
+          EditLabel.ParentColor = False
+          LabelSpacing = 1
+          TabOrder = 7
+          Visible = False
+          OnExit = AntalEditExit
+        end
+      end
+    end
+  end
+  object StringGrid1: TStringGrid
+    Left = 0
+    Height = 292
+    Top = 344
+    Width = 656
+    Align = alClient
+    TabOrder = 2
+  end
+  object Panel1: TPanel
+    Left = 0
+    Height = 30
+    Top = 314
+    Width = 656
+    Align = alTop
+    Alignment = taLeftJustify
+    ClientHeight = 30
+    ClientWidth = 656
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -16
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold, fsItalic]
+    ParentFont = False
+    TabOrder = 3
+    object PageColor2: TShape
+      Left = 320
+      Height = 25
+      Top = 0
+      Width = 65
+      Pen.Style = psClear
+    end
+    object Label1: TLabel
+      Left = 12
+      Height = 18
+      Top = 6
+      Width = 269
+      Caption = 'Indbetalingskort klar til generering...'
+      ParentColor = False
+    end
+  end
+  object StringGridRabat: TStringGrid
+    Left = 40
+    Height = 104
+    Top = 472
+    Width = 488
+    TabOrder = 4
+    Visible = False
+  end
+  object PopupMenu1: TPopupMenu
+    left = 296
+    top = 16
+    object MenuItem1: TMenuItem
+      Action = Luk
+    end
+    object MenuItem2: TMenuItem
+      Caption = '&Søg'
+      Hint = 'Start søgning'
+      ImageIndex = 1
+      ShortCut = 16498
+    end
+    object MenuItem3: TMenuItem
+      Caption = 'Søg &Flere'
+      Hint = 'Søg flere'
+      ImageIndex = 2
+    end
+    object MenuItem4: TMenuItem
+      Action = Help
+    end
+  end
+  object ZQuery1: TZQuery
+    Params = <>
+    left = 336
+    top = 16
+  end
+  object ActionList1: TActionList
+    Images = ImageList1
+    left = 264
+    top = 16
+    object Luk: TAction
+      Caption = '&Luk'
+      Hint = 'Luk vindue'
+      ImageIndex = 0
+      OnExecute = LukExecute
+      ShortCut = 16460
+    end
+    object Help: TAction
+      Caption = 'Help'
+      Hint = 'Hjælp'
+      ImageIndex = 1
+      OnExecute = HelpExecute
+    end
+    object FindMedlem: TAction
+      Hint = 'Find medlem med dette brugermedlemsnr'
+      ImageIndex = 2
+      OnExecute = FindMedlemExecute
+    end
+    object GenererIndbetalingskort: TAction
+      Caption = '&Generer'
+      Hint = 'Laver de viste indbetalingskort'
+      ImageIndex = 3
+      OnExecute = GenererIndbetalingskortExecute
+    end
+  end
+  object ImageList1: TImageList
+    left = 208
+    top = 16
+    Bitmap = {
+      4C69040000001000000010000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      00000000000000000000000000003277CBFF3277CBFF3277CBFF3277CBFF3277
+      CBFF3277CBFF3277CBFF3277CBFF3277CBFF3277CBFF3277CBFF000000000000
+      00000000000000000000000000003277CBFF4C8CCFFF4582C0DE000305460003
+      0546000000380000002E0000002400000018000000093277CBFF000000000000
+      00000000000000000000000000003176CAFF3374C0FF77B2E8FF719EC3BF0003
+      0546000000380000002E000000240000001800000009128C4CFF009900FF0000
+      000000000000000000000000000066768BFF2F70BEFF3F88D9FF89BFEEFF2F62
+      96BF000000380000002E0000002400000018009400A4009900FF009900FF0000
+      00000000000000000000000000003074C8FF2E6EBCFF3882D6FF61A0E1FF1436
+      67FF000000380000002E000000240084006F009900FF84D086FF009900FF0099
+      00FF009900FF009900FF009900FF2F72C6FF2D6CBAFF3780D3FF64A0E0FF1436
+      67FF000000380000002E007B0077009900FF80CF82FF71CA74FF6CC870FF77CD
+      7CFF7ED082FF68C96EFF007300FF2D70C3FF2B6AB7FF347DD0FF5C99DBFF1436
+      67FF000000380000002E009900FF7ECE80FF42B846FF36B43BFF3EB844FF46BC
+      4CFF50C157FF66CA6EFF007300FF2C6DC1FF2966B4FF3279CDFF5491D5FF1436
+      67FF000000380000002E007B0077009900FF57C05BFF4ABC4FFF58C35EFF5FC6
+      66FF66CA6EFF75D07DFF007300FF2A6ABEFF2763AFFF2F74C8FF5A7696FF4E5F
+      77FF000000380000002E000000240084006F009900FF6BC970FF007300FF0073
+      00FF007300FF007300FF007300FF647388FF245EAAFF2C6FC2FF406EA7FF394A
+      62FF000000380000002E0000002400000018009400A4009900FF007300FFFFFF
+      FF00FFFFFF00FFFFFF00FFFFFF002564B7FF2159A6FF296ABDFF3B77C2FF1335
+      65FF000000380000002E0000002400000018000000090E8544FF007300FFFFFF
+      FF00FFFFFF00FFFFFF00FFFFFF002360B3FF1E54A0FF2564B7FF326EBCFF1438
+      6AFF000000380000002E0000002400000018000000092360B3FF00000000FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00000000001C529FD3215EB1FF2964B4FF1539
+      6DFF0000002E00000029000000230000001E000000180000000500000000FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00000000001C509C221F58A8EF235FB1FF163C
+      72FF000000430000003E0000003A00000026000000080000000000000000FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF0000000000000000001D53A1502059AAFF1740
+      79FF000000570000004D0000002100000000000000000000000000000000FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF007F7F7F029E9E9E3DAFAFAF81B6B6B69CA6A6A66098989817FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00ABAB
+      AB74EDEDEDF5FBFBFBFFF4F4F4FFF2F2F2FFF2F2F2FFF6F6F6FFCBCBCBCD9999
+      991CFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF0099999905C9C9C9C9FCFC
+      FCFFEDEDEDFFDCCFBFFFD2B291FFCFAA83FFD2B9A1FFDCD8D4FFE7E7E7FFE4E4
+      E4F5A5A5A55CFFFFFF00FFFFFF00FFFFFF00FFFFFF00B9B9B9A4FAFAFAFFE5DF
+      D9FFCFA06FFFE6B784FFE8C193FFDFB890FFE4BB8FFFC6935EFFD1B89DFFDFDF
+      DFFFE0E0E0F59999991CFFFFFF00FFFFFF00A1A1A144F9F9F9FDE9E8E7FFD099
+      5DFFEAB476FFD5AC82FFF7F4F1FFFFFFFFFFEAE0D7FFD2A16FFFCE965BFFD1B7
+      9DFFDFDFDFFFC3C3C3CDFFFFFF00FFFFFF00C1C1C1B8F3F3F3FFD6AF84FFE9A6
+      57FFE5A154FFD99B58FFCDA073FFCEAA88FFFFFFFFFFCDAB89FFC98641FFB778
+      3AFFE0DBD8FFE6E6E6FF98989817FFFFFF00D8D8D8E1EAEAEAFFD1924BFFE594
+      34FFDF8C2DFFD98527FFD27D1FFFD2B08FFFFFFFFFFFC0864CFFBE6D19FFB968
+      16FFD2B9A3FFDEDEDEFFA2A2A260FFFFFF00F4F4F4FAE5E5E5FFD4842AFFE38B
+      24FFDD8520FFD77F1CFFCF7D21FFF8F5F3FFD3B9A0FFBF680BFFB96208FFB35C
+      03FFC49B75FFDEDEDEFFADADAD9CFFFFFF00E6E6E6F0E4E4E4FFCF8736FFE38B
+      24FFDD8520FFD77F1CFFCC9964FFFFFFFFFFC07D38FFBF680BFFB96208FFB35C
+      03FFCCAA8AFFDFDFDFFFA6A6A681FFFFFF00CCCCCCCFE7E7E7FFD29959FFE38B
+      24FFDD8520FFD7801DFFCC7C25FFC68540FFC47013FFBF690CFFB96208FFB15B
+      03FFDCCEC0FFDDDDDDFF9898983DFFFFFF00B3B3B392EFEFEFFFDDCEBEFFD986
+      27FFDD8C2AFFDA963EFFD5B998FFFFFFFFFFCB9A5DFFC6822EFFBB670FFFB882
+      4CFFE5E5E5FFD3D3D3F57E7E7E02FFFFFF0099999905D9D9D9E8E2E2E2FFD8B5
+      8EFFD3872DFFD9973FFFC6965FFFD2BBA7FFC78D43FFC6822EFFB57433FFE4DD
+      D8FFDFDFDFFF9F9F9F74FFFFFF00FFFFFF00FFFFFF009F9F9F41ECECECFCDEDE
+      DEFFDECFC0FFCA9155FFC0792EFFBD7120FFBC7E3BFFCCA37AFFE6E6E5FFE0E0
+      E0FFB7B7B7C9FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF009F9F9F41D3D3
+      D3E8E2E2E2FFDFDFDFFFE3E3E3FFE5E5E5FFE4E4E4FFE1E1E1FFD9D9D9FDA9A9
+      A9A497979705FFFFFF00FFFFFF00FFFFFF00FFFFFF0000000009000000210D0D
+      0D3A909090B2B1B1B1E1CBCBCBF6D9D9D9FCB9B9B9EE9C9C9CD25555557B0000
+      00360000001A00000002FFFFFF00FFFFFF00FFFFFF00FFFFFF00000000010000
+      00060000000D000000140000001C0000001D00000017000000100000000A0000
+      0004FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF009C8F
+      83E2BCB0A4FF9D9185FFFFFFFF00AEA093FF9D9185FF655D55DAFFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF008E83
+      78E2C3B8AEFF655D55FFFFFFFF007C7268FFA89B8EFF9C8F83E4FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00746B62FFA4978AFF9589
+      7DFF9F9286FF3E3934FFFFFFFF004C4640FF7E746AFF857A70FF3E3934FF453F
+      3AA72522200C15131102FFFFFF00B9ACA008877D72489B8E82FF9D9185FF867B
+      71FF564F48FF504A44FF80766CFF6E665DFF826C58FFA6917DFF948474FF564F
+      48FF0C0B0B7A07070601FFFFFF00AB9D9004AFA194E1BAAEA2FF82776DFF8277
+      6DFFAA917BFFBAA794FFB7A48EFAB09781FF9F8D7DFF836D5BFF716357FF9589
+      7DFF040403E000000003FFFFFF009F9286059D9185FFB1A396FF7F756BFF7C72
+      68FF776D64FF6C635BFF2E2A26FF564F48FF80766CFF7C7268FF776D64FF7067
+      5EFF000000FE00000005FFFFFF00797066055C554EF9423D38FF58514AFF3D38
+      33FF332F2BFF23201DE5171614301E1C19B51A1816FF252220FF191715FF0F0E
+      0DFF010101EE00000002FFFFFF00FFFFFF005A524CC39F9286FFCCC3BAFFC0B4
+      AAFFA6988BFF3E3934A8FFFFFF002C2925A8908479FFC2B8ADFFC0B4AAFFA89B
+      8EFF110F0EC3FFFFFF00FFFFFF00FFFFFF00534C46FC83786FFFCCC3BAFF7970
+      66FF71685FFF37332ED5FFFFFF00252220D5857A70FFC2B8ADFF786F65FF7B71
+      67FF0A0908FCFFFFFF00FFFFFF00FFFFFF004D4741FF83786FFFCCC3BAFF786F
+      65FF7B7167FF2F2B28F9272421011D1B18EE95897DFFC2B8ADFF786F65FF7C72
+      68FF060505FFFFFFFF00FFFFFF00FFFFFF0046413BFF857A70FFC3B8AEFF7C72
+      68FF7F756BFF36322DFF1E1C190F282522D495897DFFBAAEA2FF7C7268FF7F75
+      6BFF010101FFFFFFFF00FFFFFF00FFFFFF003E3934FF393430FF332F2BFF2C29
+      25FF272421FF201D1BFF1716141A110F0EDB0B0A09FF070706FF040403FF0000
+      00FF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF0086C38BF582C0870EFFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF0084C28AF596CD9BFF80BE85FF79B97E0EFFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF0083C188F594CD9AFFB3E2B7FF93CB98FF77B77CFF70B2
+      740EFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF0082C087F594CC99FFB2E2B7FFA3DCAAFFB0E0B6FF8CC692FF6EB1
+      73FF66AB6B0EFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF0081BF86F593CC98FFB1E1B7FFA3DBA9FF9BD8A2FF73B477FFAFDFB4FF87C3
+      8CFF65AA69FF5DA4610EFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF007FBE
+      85F592CB97FFB1E1B6FF85C38AFF80C185FF99D7A0FF98D79FFF9FD9A5FFACDF
+      B2FF7DBB81FF58A05CF6FFFFFF00FFFFFF00FFFFFF00FFFFFF007EBD83F691CA
+      96FFB1E0B6FFD9F3DDFFF7FCF8FFA4D0A7FF7EC084FF9FD9A5FFACDEB2FF7BBB
+      80FF569F5AFBFFFFFF00FFFFFF00FFFFFF008EC993257DBC82FA90C995FFB0E0
+      B6FF85C28AFFF7FCF8FF95C297FFDDEEDFFF82C287FFABDEB1FF7BBA7FFF58A0
+      5CFF59A15DFF539C5704FFFFFF008DC9937D7DBB82FF8FC894FFB0E0B6FFA2DA
+      A8FF7FC185FFA4D0A7FFDDEEDFFF80B883FFABDEB1FF7AB97FFF569F5AFFC4E7
+      C8FF78B87CFF4E995284FFFFFF007BBB80FF8EC893FFAFDFB5FFA1DAA7FF98D7
+      9FFF97D69EFF7EC083FF82C187FFABDDB0FF79B97DFF63AE67FFC4E7C8FFC1E4
+      C4FFB9E0BEFF4F9A53FF459249117FBD84A07FBD84FF97CE9CFFADDFB3FF6FB3
+      74FF96D59DFF9DD8A3FFAADDB0FF78B87CFF72BA76FFC3E7C8FFB2DAB5FF69B8
+      6EF8569E59FF45914873418F44327FBE84197BBB80FF77B77CFF91CB97FFABDE
+      B1FF9CD7A2FFAADDB0FF77B77CFF60AC65FFAED8B2FF8BC491FF4C9750B94894
+      4C9144914822FFFFFF00FFFFFF00FFFFFF0075B67A9B9CCDA0FF6FB273FF8DC7
+      92FFAADCAFFF76B67BFF519B55FF77B77BFF509A53DD4B964F4247934B29FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF006FB274277CBB81FCB7DEBBFF67AC
+      6CFF75B67AFF4E9851FE539C57B84F99537AFFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF006AAE6E0565AA69AF60A665FD6BAE
+      6FFF4C9750FB529C56344E995222FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF0060A664315BA25FCC569F
+      5A4BFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00
+    }
+  end
+  object ZQueryMedlem: TZQuery
+    Params = <>
+    left = 368
+    top = 16
+  end
+  object ZQueryRabatDef: TZQuery
+    Params = <>
+    left = 400
+    top = 16
+  end
+  object ZQueryRabatKategori: TZQuery
+    Params = <>
+    left = 432
+    top = 16
+  end
+end

@@ -1,0 +1,148 @@
+object KassekladdeDefForm: TKassekladdeDefForm
+  Left = 644
+  Height = 240
+  Top = 227
+  Width = 482
+  Caption = 'Definer kassekladde...'
+  ClientHeight = 240
+  ClientWidth = 482
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  LCLVersion = '1.6.2.0'
+  object ToolBar1: TToolBar
+    Left = 0
+    Height = 26
+    Top = 0
+    Width = 482
+    Caption = 'ToolBar1'
+    Images = MainDataModule.ImageList1
+    TabOrder = 0
+    object ToolButton1: TToolButton
+      Left = 1
+      Top = 2
+      Action = Luk
+    end
+    object ToolButton2: TToolButton
+      Left = 24
+      Top = 2
+      Action = Opret
+    end
+    object ToolButton3: TToolButton
+      Left = 70
+      Top = 2
+      Action = Help
+    end
+    object ToolButton4: TToolButton
+      Left = 47
+      Top = 2
+      Action = Slet
+    end
+  end
+  object StringGrid1: TStringGrid
+    Left = 0
+    Height = 214
+    Top = 26
+    Width = 482
+    Align = alClient
+    ColumnClickSorts = True
+    Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goEditing, goTabs, goAlwaysShowEditor, goSmoothScroll]
+    TabOrder = 1
+    OnCompareCells = StringGrid1CompareCells
+    OnEditingDone = StringGrid1EditingDone
+    OnSelectEditor = StringGrid1SelectEditor
+    OnValidateEntry = StringGrid1ValidateEntry
+  end
+  object ActionList1: TActionList
+    Images = MainDataModule.ImageList1
+    left = 232
+    object Luk: TAction
+      Category = 'Diverse_Moms'
+      Caption = '&Luk'
+      Hint = 'Luk vindue'
+      ImageIndex = 0
+      OnExecute = LukExecute
+      ShortCut = 16460
+    end
+    object Opret: TAction
+      Category = 'Diverse_Moms'
+      Caption = 'Opret'
+      Hint = 'Opret momskode'
+      ImageIndex = 29
+      OnExecute = OpretExecute
+      ShortCut = 16463
+    end
+    object Help: TAction
+      Category = 'Diverse_Moms'
+      Caption = 'Help'
+      Hint = 'Hjælp'
+      ImageIndex = 7
+      OnExecute = HelpExecute
+      ShortCut = 16456
+    end
+    object Slet: TAction
+      Category = 'Diverse_Moms'
+      Caption = 'Slet'
+      Hint = 'Slet momskode'
+      ImageIndex = 30
+      OnExecute = SletExecute
+      ShortCut = 16467
+    end
+  end
+  object PopupMenu1: TPopupMenu
+    Images = MainDataModule.ImageList1
+    left = 192
+    object MenuItem3: TMenuItem
+      Action = Opret
+    end
+    object MenuItem2: TMenuItem
+      Action = Slet
+    end
+    object MenuItem1: TMenuItem
+      Caption = '&Luk'
+      Bitmap.Data = {
+        36040000424D3604000000000000360000002800000010000000100000000100
+        2000000000000004000064000000640000000000000000000000000000000000
+        00001D53A1502059AAFF174079FF000000570000004D00000021000000000000
+        00000000000000000000FFFFFF00FFFFFF00FFFFFF00FFFFFF00000000001C50
+        9C221F58A8EF235FB1FF163C72FF000000430000003E0000003A000000260000
+        00080000000000000000FFFFFF00FFFFFF00FFFFFF00FFFFFF00000000001C52
+        9FD3215EB1FF2964B4FF15396DFF0000002E00000029000000230000001E0000
+        00180000000500000000FFFFFF00FFFFFF00FFFFFF00FFFFFF002360B3FF1E54
+        A0FF2564B7FF326EBCFF14386AFF000000380000002E00000024000000180000
+        00092360B3FF00000000FFFFFF00FFFFFF00FFFFFF00FFFFFF002564B7FF2159
+        A6FF296ABDFF3B77C2FF133565FF000000380000002E00000024000000180000
+        00090E8544FF007300FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00647388FF245E
+        AAFF2C6FC2FF406EA7FF394A62FF000000380000002E00000024000000180094
+        00A4009900FF007300FFFFFFFF00FFFFFF00FFFFFF00FFFFFF002A6ABEFF2763
+        AFFF2F74C8FF5A7696FF4E5F77FF000000380000002E000000240084006F0099
+        00FF6BC970FF007300FF007300FF007300FF007300FF007300FF2C6DC1FF2966
+        B4FF3279CDFF5491D5FF143667FF000000380000002E007B0077009900FF57C0
+        5BFF4ABC4FFF58C35EFF5FC666FF66CA6EFF75D07DFF007300FF2D70C3FF2B6A
+        B7FF347DD0FF5C99DBFF143667FF000000380000002E009900FF7ECE80FF42B8
+        46FF36B43BFF3EB844FF46BC4CFF50C157FF66CA6EFF007300FF2F72C6FF2D6C
+        BAFF3780D3FF64A0E0FF143667FF000000380000002E007B0077009900FF80CF
+        82FF71CA74FF6CC870FF77CD7CFF7ED082FF68C96EFF007300FF3074C8FF2E6E
+        BCFF3882D6FF61A0E1FF143667FF000000380000002E000000240084006F0099
+        00FF84D086FF009900FF009900FF009900FF009900FF009900FF66768BFF2F70
+        BEFF3F88D9FF89BFEEFF2F6296BF000000380000002E00000024000000180094
+        00A4009900FF009900FF000000000000000000000000000000003176CAFF3374
+        C0FF77B2E8FF719EC3BF00030546000000380000002E00000024000000180000
+        0009128C4CFF009900FF000000000000000000000000000000003277CBFF4C8C
+        CFFF4582C0DE0003054600030546000000380000002E00000024000000180000
+        00093277CBFF00000000000000000000000000000000000000003277CBFF3277
+        CBFF3277CBFF3277CBFF3277CBFF3277CBFF3277CBFF3277CBFF3277CBFF3277
+        CBFF3277CBFF0000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000
+      }
+      Hint = 'Luk vindue'
+      ImageIndex = 0
+      ShortCut = 16460
+    end
+  end
+  object ZQuery1: TZQuery
+    Params = <>
+    left = 272
+  end
+end

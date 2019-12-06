@@ -1,0 +1,120 @@
+object FTPShareForm: TFTPShareForm
+  Left = 564
+  Height = 153
+  Top = 358
+  Width = 520
+  BorderStyle = bsDialog
+  Caption = 'Data på internet...'
+  ClientHeight = 153
+  ClientWidth = 520
+  OnCreate = FormCreate
+  LCLVersion = '1.6.2.0'
+  object Panel1: TPanel
+    Left = 0
+    Height = 130
+    Top = 0
+    Width = 520
+    Align = alTop
+    ClientHeight = 130
+    ClientWidth = 520
+    TabOrder = 0
+    object Panel2: TPanel
+      Left = 1
+      Height = 31
+      Top = 98
+      Width = 518
+      Align = alBottom
+      Alignment = taLeftJustify
+      BorderWidth = 10
+      Caption = 'Holbæk er en dejlig by'
+      Color = clSilver
+      ParentColor = False
+      TabOrder = 0
+    end
+    object Panel3: TPanel
+      Left = 1
+      Height = 39
+      Top = 1
+      Width = 518
+      Align = alTop
+      Alignment = taLeftJustify
+      BorderWidth = 10
+      Caption = 'Data på internet'
+      Color = clMoneyGreen
+      Font.CharSet = ANSI_CHARSET
+      Font.Height = -13
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold, fsItalic]
+      ParentColor = False
+      ParentFont = False
+      TabOrder = 1
+    end
+    object ProgressBar1: TProgressBar
+      Left = 8
+      Height = 20
+      Top = 64
+      Width = 496
+      TabOrder = 2
+    end
+  end
+  object StatusBar1: TStatusBar
+    Left = 0
+    Height = 23
+    Top = 130
+    Width = 520
+    Panels = <>
+  end
+  object ListBox1: TListBox
+    Left = 8
+    Height = 112
+    Top = 168
+    Width = 312
+    ItemHeight = 0
+    TabOrder = 2
+  end
+  object ListBoxServer: TListBox
+    Left = 328
+    Height = 112
+    Top = 168
+    Width = 128
+    ItemHeight = 0
+    TabOrder = 3
+  end
+  object ZQuery1: TZQuery
+    Params = <>
+    left = 224
+    top = 8
+  end
+  object AbZipper1: TAbZipper
+    AutoSave = False
+    DOSMode = False
+    StoreOptions = [soStripDrive, soRemoveDots, soRecurse]
+    left = 280
+    top = 8
+  end
+  object IdFTP1: TIdFTP
+    OnWork = IdFTP1Work
+    OnWorkBegin = IdFTP1WorkBegin
+    OnWorkEnd = IdFTP1WorkEnd
+    IPVersion = Id_IPv4
+    ConnectTimeout = 0
+    NATKeepAlive.UseKeepAlive = False
+    NATKeepAlive.IdleTimeMS = 0
+    NATKeepAlive.IntervalMS = 0
+    ProxySettings.ProxyType = fpcmNone
+    ProxySettings.Port = 0
+    left = 400
+    top = 8
+  end
+  object AbUnZipper1: TAbUnZipper
+    left = 336
+    top = 8
+  end
+  object Timer1: TTimer
+    OnTimer = Timer1Timer
+    left = 176
+    top = 8
+  end
+end

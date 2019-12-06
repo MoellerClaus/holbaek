@@ -1,0 +1,930 @@
+object KasseKladdeForm: TKasseKladdeForm
+  Left = 424
+  Height = 601
+  Top = 183
+  Width = 699
+  Caption = 'Kassekladde...'
+  ClientHeight = 601
+  ClientWidth = 699
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  OnResize = FormResize
+  PopupMenu = PopupMenuRediger
+  LCLVersion = '1.6.2.0'
+  object ToolBar1: TToolBar
+    Left = 0
+    Height = 26
+    Top = 0
+    Width = 699
+    Caption = 'ToolBar1'
+    Images = MainDataModule.ImageList1
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 0
+    Wrapable = False
+    object ToolButton1: TToolButton
+      Left = 1
+      Top = 2
+      Action = Luk
+    end
+    object ToolButton2: TToolButton
+      Left = 24
+      Top = 2
+      Action = NytBilag
+    end
+    object ToolButton3: TToolButton
+      Left = 47
+      Top = 2
+      Action = Slet
+    end
+    object ToolButton4: TToolButton
+      Left = 70
+      Top = 2
+      Action = RedigerAfstemningskonti
+    end
+    object ToolButton5: TToolButton
+      Left = 93
+      Top = 2
+      Action = TjekKassekladde
+    end
+    object ToolButton6: TToolButton
+      Left = 116
+      Top = 2
+      Action = Bogfoer
+    end
+    object ToolButton8: TToolButton
+      Left = 139
+      Top = 2
+      Action = BogfoerAlle
+    end
+    object ToolButton7: TToolButton
+      Left = 162
+      Top = 2
+      Action = VisAfstemningsKonti
+      Style = tbsCheck
+    end
+    object ToolButton9: TToolButton
+      Left = 185
+      Top = 2
+      Action = Udskriv_Kassekladde
+    end
+    object ToolButton10: TToolButton
+      Left = 208
+      Top = 2
+      Action = Udskriv_kontoplan
+    end
+    object ToolButton11: TToolButton
+      Left = 231
+      Top = 2
+      Action = Udskriv_Postering
+    end
+  end
+  object PageControl1: TPageControl
+    Left = 0
+    Height = 358
+    Top = 26
+    Width = 699
+    ActivePage = Kassekladde_Page
+    Align = alClient
+    Images = MainDataModule.ImageList1
+    TabIndex = 0
+    TabOrder = 1
+    OnChange = PageControl1Change
+    OnChanging = PageControl1Changing
+    object Kassekladde_Page: TTabSheet
+      Caption = '&Kassekladde'
+      ClientHeight = 330
+      ClientWidth = 691
+      ImageIndex = 1
+      object PanelKassekladde: TPanel
+        Left = 0
+        Height = 204
+        Top = 126
+        Width = 691
+        Align = alClient
+        Caption = 'PanelKassekladde'
+        Color = clCream
+        ParentColor = False
+        TabOrder = 1
+      end
+      object StringGrid1: TStringGrid
+        Left = 0
+        Height = 204
+        Top = 126
+        Width = 691
+        Align = alClient
+        Color = clMoneyGreen
+        ColCount = 6
+        DefaultRowHeight = 19
+        Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goEditing, goTabs, goAlwaysShowEditor, goSmoothScroll]
+        TabOrder = 0
+        OnBeforeSelection = StringGrid1BeforeSelection
+        OnClick = StringGrid1Click
+        OnCompareCells = StringGrid1CompareCells
+        OnButtonClick = StringGrid1ButtonClick
+        OnEditingDone = StringGrid1EditingDone
+        OnEnter = StringGrid1Enter
+        OnPickListSelect = StringGrid1PickListSelect
+        OnSelectEditor = StringGrid1SelectEditor
+        OnValidateEntry = StringGrid1ValidateEntry
+      end
+      object DateEdit1: TDateEdit
+        Left = 100
+        Height = 23
+        Top = 158
+        Width = 100
+        CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames, dsShowWeekNumbers]
+        DefaultToday = True
+        DateOrder = doDMY
+        ButtonOnlyWhenFocused = True
+        ButtonWidth = 23
+        NumGlyphs = 1
+        MaxLength = 10
+        OnExit = DateEdit1Exit
+        OnKeyDown = DateEdit1KeyDown
+        TabOrder = 2
+        Visible = False
+        Text = '10-12-2016'
+      end
+      object FloatSpinEdit1: TFloatSpinEdit
+        Left = 363
+        Height = 23
+        Top = 188
+        Width = 50
+        Increment = 1
+        MaxValue = 100
+        MinValue = 0
+        TabOrder = 3
+        Value = 0
+      end
+      object KassekladdeOversigtPanel: TPanel
+        Left = 0
+        Height = 34
+        Top = 0
+        Width = 691
+        Align = alTop
+        ClientHeight = 34
+        ClientWidth = 691
+        Color = clSkyBlue
+        ParentColor = False
+        TabOrder = 4
+        object StatusBilagLabel: TLabel
+          Left = 11
+          Height = 15
+          Hint = 'Yderligere oplysninger om bilag'
+          Top = 10
+          Width = 8
+          Caption = '[]'
+          ParentColor = False
+        end
+      end
+      object Kassekladde_Tjek_Panel: TPanel
+        Left = 0
+        Height = 92
+        Top = 34
+        Width = 691
+        Align = alTop
+        ClientHeight = 92
+        ClientWidth = 691
+        Color = clCream
+        ParentColor = False
+        TabOrder = 5
+        object TjekMemo: TMemo
+          Left = 1
+          Height = 90
+          Top = 1
+          Width = 649
+          Align = alClient
+          Lines.Strings = (
+            'Ingen fejl'
+          )
+          ScrollBars = ssAutoVertical
+          TabOrder = 0
+        end
+        object TjekPanelButton: TPanel
+          Left = 650
+          Height = 90
+          Top = 1
+          Width = 40
+          Align = alRight
+          ClientHeight = 90
+          ClientWidth = 40
+          TabOrder = 1
+          object SpeedCloseTjekPanel: TSpeedButton
+            Left = 10
+            Height = 22
+            Top = 3
+            Width = 23
+            Glyph.Data = {
+              F6000000424DF600000000000000760000002800000010000000100000000100
+              04000000000080000000120B0000120B00001000000010000000000000000000
+              80000080000000808000800000008000800080800000C0C0C000808080000000
+              FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00777777777777
+              7777777777777777777777777777777777777777877777777777777717777777
+              7777777711777781777777778187781877777777711871177777777778111177
+              7777777778111777777777778111187777777777118711877777777777777118
+              7777777777777711877777777777777777777777777777777777
+            }
+            OnClick = SpeedCloseTjekPanelClick
+          end
+        end
+      end
+    end
+    object TabKontoplan: TTabSheet
+      Caption = 'Kontoplan'
+      ClientHeight = 330
+      ClientWidth = 691
+      ImageIndex = 4
+      object StringGrid2: TStringGrid
+        Left = 0
+        Height = 330
+        Hint = 'Kontoplan'
+        Top = 0
+        Width = 691
+        Align = alClient
+        TabOrder = 0
+        OnCompareCells = StringGrid2CompareCells
+        OnDblClick = StringGrid2DblClick
+      end
+    end
+    object Posteringsoversigt: TTabSheet
+      Caption = 'Posteringsovesigt'
+      ClientHeight = 330
+      ClientWidth = 691
+      ImageIndex = 37
+      object StringGridPost: TStringGrid
+        Left = 0
+        Height = 330
+        Top = 0
+        Width = 691
+        Align = alClient
+        TabOrder = 0
+        OnCompareCells = StringGridPostCompareCells
+      end
+    end
+    object Indstilinger: TTabSheet
+      Caption = 'Indstillinger'
+      ClientHeight = 330
+      ClientWidth = 691
+      ImageIndex = 10
+      object PanelIndstilling: TPanel
+        Left = 0
+        Height = 330
+        Top = 0
+        Width = 691
+        Align = alClient
+        ClientHeight = 330
+        ClientWidth = 691
+        TabOrder = 0
+        object GroupBox3: TGroupBox
+          Left = 4
+          Height = 312
+          Top = 6
+          Width = 434
+          Caption = 'Kladdeindstillinger '
+          ClientHeight = 292
+          ClientWidth = 430
+          TabOrder = 0
+          object Label2: TLabel
+            Left = 6
+            Height = 15
+            Top = 0
+            Width = 179
+            Caption = 'Tillad kun posteringer i intervallet:'
+            ParentColor = False
+          end
+          object DateTimePosteringFra: TDateEdit
+            Left = 6
+            Height = 23
+            Top = 16
+            Width = 96
+            CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames]
+            DateOrder = doDMY
+            ButtonWidth = 23
+            NumGlyphs = 1
+            MaxLength = 10
+            TabOrder = 0
+            Text = '  -  -    '
+          end
+          object DateTimePosteringTil: TDateEdit
+            Left = 142
+            Height = 23
+            Top = 16
+            Width = 98
+            CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames]
+            DateOrder = doNone
+            ButtonWidth = 23
+            NumGlyphs = 1
+            MaxLength = 0
+            TabOrder = 1
+          end
+          object Label3: TLabel
+            Left = 118
+            Height = 15
+            Top = 16
+            Width = 10
+            Caption = 'til'
+            ParentColor = False
+          end
+          object GroupAfstemningskonto: TGroupBox
+            Left = 6
+            Height = 105
+            Top = 48
+            Width = 169
+            Caption = ' Afstemningskonto '
+            ClientHeight = 85
+            ClientWidth = 165
+            TabOrder = 2
+            object CheckKunAfstemningskonti: TCheckBox
+              Left = 13
+              Height = 19
+              Hint = 'Vis kun afstemningskonti under afstemningskonti'
+              Top = 9
+              Width = 153
+              Caption = 'Vis kun afstemningskonti'
+              Checked = True
+              OnChange = CheckKunAfstemningskontiChange
+              State = cbChecked
+              TabOrder = 0
+            end
+            object CheckVisCombo: TCheckBox
+              Left = 13
+              Height = 19
+              Hint = 'Vis afstemningskonti i comboboks'
+              Top = 40
+              Width = 107
+              Caption = 'Vis i comboboks'
+              OnChange = CheckVisComboChange
+              TabOrder = 1
+            end
+          end
+          object Group_DefaultSmartTekst: TGroupBox
+            Left = 6
+            Height = 41
+            Hint = 'Indstilling af smart tekst'
+            Top = 224
+            Width = 168
+            Caption = ' Default tekst '
+            ClientHeight = 21
+            ClientWidth = 164
+            TabOrder = 3
+            object CheckBoxSmartDefaultTekst: TCheckBox
+              Left = 6
+              Height = 19
+              Hint = 'Slå smart default tekst til'
+              Top = 0
+              Width = 106
+              Caption = 'Brug smart tekst'
+              TabOrder = 0
+            end
+          end
+          object GroupBox4: TGroupBox
+            Left = 6
+            Height = 66
+            Top = 152
+            Width = 201
+            Caption = ' Formål '
+            ClientHeight = 46
+            ClientWidth = 197
+            TabOrder = 4
+            object CheckBilagFormaal: TCheckBox
+              Left = 6
+              Height = 19
+              Hint = 'Bogfør kun bilag med formål'
+              Top = 14
+              Width = 173
+              Caption = 'Bogfør kun bilag med formål'
+              TabOrder = 0
+            end
+          end
+        end
+      end
+    end
+  end
+  object AfstemningsPanel: TPanel
+    Left = 0
+    Height = 128
+    Top = 384
+    Width = 699
+    Align = alBottom
+    Caption = 'AfstemningsPanel'
+    ClientHeight = 128
+    ClientWidth = 699
+    Color = clOlive
+    ParentColor = False
+    TabOrder = 2
+    object Panel2: TPanel
+      Left = 1
+      Height = 103
+      Top = 24
+      Width = 697
+      Align = alBottom
+      Caption = 'Panel2'
+      ClientHeight = 103
+      ClientWidth = 697
+      TabOrder = 0
+      object AfstemStringGrid: TStringGrid
+        Left = 1
+        Height = 101
+        Top = 1
+        Width = 695
+        Align = alClient
+        AutoEdit = False
+        DefaultRowHeight = 19
+        ExtendedSelect = False
+        FixedCols = 0
+        Options = []
+        PopupMenu = PopupMenuRediger
+        TabOrder = 0
+        TabStop = False
+      end
+    end
+    object Label5: TLabel
+      Left = 8
+      Height = 15
+      Top = 7
+      Width = 97
+      Caption = 'Afstemningskonti:'
+      ParentColor = False
+    end
+    object AfstemningsSpeed: TSpeedButton
+      Left = 664
+      Height = 22
+      Top = 0
+      Width = 23
+      Glyph.Data = {
+        36040000424D3604000000000000360000002800000010000000100000000100
+        2000000000000004000064000000640000000000000000000000C0C0C0FFC0C0
+        C0FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0
+        C0FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0
+        C0FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0
+        C0FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0
+        C0FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0
+        C0FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0
+        C0FFC0C0C0FFC0C0C0FF808080FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0
+        C0FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0
+        C0FFC0C0C0FFC0C0C0FF000080FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0
+        C0FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0
+        C0FFC0C0C0FFC0C0C0FF000080FF000080FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0
+        C0FF808080FF000080FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0
+        C0FFC0C0C0FFC0C0C0FF808080FF000080FF808080FFC0C0C0FFC0C0C0FF8080
+        80FF000080FF808080FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0
+        C0FFC0C0C0FFC0C0C0FFC0C0C0FF000080FF000080FF808080FFC0C0C0FF0000
+        80FF000080FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0
+        C0FFC0C0C0FFC0C0C0FFC0C0C0FF808080FF000080FF000080FF000080FF0000
+        80FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0
+        C0FFC0C0C0FFC0C0C0FFC0C0C0FF808080FF000080FF000080FF000080FFC0C0
+        C0FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0
+        C0FFC0C0C0FFC0C0C0FF808080FF000080FF000080FF000080FF000080FF8080
+        80FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0
+        C0FFC0C0C0FFC0C0C0FF000080FF000080FF808080FFC0C0C0FF000080FF0000
+        80FF808080FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0
+        C0FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0C0FF0000
+        80FF000080FF808080FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0
+        C0FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0
+        C0FF000080FF000080FF808080FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0
+        C0FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0
+        C0FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0
+        C0FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0
+        C0FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0C0FF
+      }
+      OnClick = AfstemningsSpeedClick
+    end
+    object SpeedRefreshAfstemningskonti: TSpeedButton
+      Left = 632
+      Height = 22
+      Top = 0
+      Width = 23
+      Glyph.Data = {
+        36040000424D3604000000000000360000002800000010000000100000000100
+        2000000000000004000064000000640000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000330000
+        0023000000000000000000000000000000000000000000000000B3ADA1000000
+        000A000000260000003300000033000000330000003300000033008B49FF007E
+        3FBD000000250000000A008C4700008F4D00008F4F00008F4F000000001F625F
+        585CA6A095C9B0AA9EFFB1AA9EFFB8ABA1FFCCAEA9FF008640FF13C78FFF0086
+        41FFC7A4A1C574605F59000000330000002A00000007008F4F009E988EADB4AE
+        A2FFC5BEB3FFD5CBC2FFE8D9D2FFFFE5E4FF008139FF35CC9BFF00DCA1FF00BB
+        7DFF009B58FF008641FF008946FF008547DA003C214D00000007B1AB9FFFC8C1
+        B6FFCFC7BFFFD7CDC6FFE8D7D1FF007D31FF4FD2ACFF00D39CFF00D29CFF00D5
+        A0FF00D8A3FF00DAA6FF00DCA8FF00C28BFF009050FF004C2A3FB0AB9EFFC7C0
+        B6FFCDC4BBFFD4CAC2FFE2D3CCFFFDDFDDFF007C32FF7CE7D6FF00C59DFF00AE
+        7CFF00823CFF009758FF00985AFF00B17EFF00B689FF008045BBB0AA9EFFCAC3
+        B9FFEAE5DDFFF8F3ECFFFFFDF9FFFFFFFFFFFFFFFFFF007E34FF97EAE6FF0082
+        39FFFFEBE9FFB1BAA9FF96A48EFF008A46BA00A171FF009153FFA49E93ADF9F3
+        EDFFD8D1C9FFC5B9B2FFBAB2A9FF007F33FF7DAE8EFFF5C8CBFF00843AFF3D97
+        68FFF9D9DAFF5EB68BFF008742FF00000033008D4C65008E4EFF9E998EB4A39A
+        8FFFBAB2A7FFCEC2BAFFF1DBD6FF008F4BFF00A764FF369D6AFFB4C4B2FFAEB8
+        A6FFE5BABCFF00823CFF12E6B1FF008644FF00000033008E4E00B1AB9FFFC9C2
+        B9FFCFC7BFFFD8CDC6FFECD8D2FF4BA477FF00BD7EFF00B878FF009A58FF009B
+        58FF00833EFF00BB7CFF00DAA0FF3CE9BDFF008745FF00000033B0AB9EFFC7C0
+        B6FFCCC4BBFFD4CAC2FFE2D3CCFFC3CCBCFF008C49FF00BE83FF00D7A4FF00D8
+        A5FF00D7A4FF00D4A0FF00D19CFF00D39EFF61DBB7FF008C4AFFAFAA9DFFC8C1
+        B7FFE8E3DBFFF5F0E9FFFFF9F3FFFFFBF8FFDBE7D9FF2FA069FF008039FF0081
+        3AFF00813BFF00AF7CFF00C69FFF86DCC5FF008744FF008D4C00AEA89CFFFBF5
+        EFFFEEE7DEFFE0D8CEFFDDD5CCFFE0D5CDFFE6D8D1FFEFDBD6FFF4DDD9FFFAE0
+        DDFFFFF1F0FF008139FF9CE2D6FF008742FF008C4900008E4D00AFA99DFFE1D8
+        CEFFE1D7CEFFDFD6CCFFDFD5CBFFDFD5CBFFE0D6CCFFE1D6CDFFE2D7CEFFE5D8
+        CFFFF0DCD5FF47A778FF00863DFF008A4200008B4600008C4600B1AB9F99B6B0
+        A4FFD6CFC4FFE6DED5FFEFE7DDFFEEE6DCFFEEE6DCFFEEE6DCFFEFE7DDFFE7DF
+        D5FFDAD0C6FFC2B3AAFFC2AEA798C5B0A900C6B0AA00C6B0AA00B3ADA100B1AB
+        9F33B0AA9EBCAEA99CFFAEA89CFFAEA89CFFAEA89CFFAEA89CFFAEA89CFFAEA9
+        9CFFB0AA9EBCB3ACA033B5ADA200B6ADA200B6ADA300B6ADA300
+      }
+      OnClick = SpeedRefreshAfstemningskontiClick
+    end
+    object SpeedSumBogfoertPlusKassekladde: TSpeedButton
+      Left = 472
+      Height = 22
+      Hint = 'Slutsaldo = Sum af debet - kredit af alle bilag i kassekladde og alle bogførte'
+      Top = 0
+      Width = 23
+      Down = True
+      Glyph.Data = {
+        36040000424D3604000000000000360000002800000010000000100000000100
+        2000000000000004000064000000640000000000000000000000A4A0A0FFA4A0
+        A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0
+        A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0
+        A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0
+        A0FF0000FFFFA4A0A0FFA4A0A0FF0000FFFFA4A0A0FFA4A0A0FFA4A0A0FFA4A0
+        A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0
+        A0FF0000FFFFA4A0A0FF0000FFFFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FF0000
+        00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FFA4A0
+        A0FF0000FFFF0000FFFFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FF0000
+        00FF000000FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FF000000FFA4A0
+        A0FF0000FFFFA4A0A0FF0000FFFFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0
+        A0FF000000FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FF000000FF000000FFA4A0
+        A0FF0000FFFFA4A0A0FFA4A0A0FF0000FFFFA4A0A0FFA4A0A0FFA4A0A0FFA4A0
+        A0FFA4A0A0FF000000FF000000FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0
+        A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0
+        A0FFA4A0A0FFA4A0A0FF000000FF000000FFA4A0A0FFA4A0A0FF0000FFFF0000
+        FFFFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0
+        A0FFA4A0A0FFA4A0A0FFA4A0A0FF000000FF000000FFA4A0A0FF0000FFFFA4A0
+        A0FF0000FFFFA4A0A0FFA4A0A0FF0000FFFFA4A0A0FFA4A0A0FFA4A0A0FFA4A0
+        A0FFA4A0A0FFA4A0A0FFA4A0A0FF000000FF000000FFA4A0A0FF0000FFFF0000
+        FFFF0000FFFFA4A0A0FF0000FFFF0000FFFF0000FFFFA4A0A0FFA4A0A0FFA4A0
+        A0FFA4A0A0FFA4A0A0FF000000FF000000FFA4A0A0FFA4A0A0FF0000FFFFA4A0
+        A0FF0000FFFFA4A0A0FFA4A0A0FF0000FFFFA4A0A0FFA4A0A0FFA4A0A0FFA4A0
+        A0FFA4A0A0FF000000FF000000FFA4A0A0FFA4A0A0FFA4A0A0FF0000FFFF0000
+        FFFFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0
+        A0FF000000FF000000FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0
+        A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FF0000
+        00FF000000FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FF000000FF000000FFA4A0
+        A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FF0000
+        00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FFA4A0
+        A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0
+        A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0
+        A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FF
+      }
+      GroupIndex = 1
+      OnClick = SpeedSumBogfoertPlusKassekladdeClick
+    end
+    object SpeedSumBogfoert: TSpeedButton
+      Left = 496
+      Height = 22
+      Hint = 'Slutsaldo = Sum af debet - kredit af alle bogførte bilag'
+      Top = 0
+      Width = 23
+      Glyph.Data = {
+        36040000424D3604000000000000360000002800000010000000100000000100
+        2000000000000004000064000000640000000000000000000000A4A0A0FFA4A0
+        A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0
+        A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0
+        A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0
+        A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0
+        A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0
+        A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FF0000
+        00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FFA4A0
+        A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FF0000
+        00FF000000FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FF000000FFA4A0
+        A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0
+        A0FF000000FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FF000000FF000000FFA4A0
+        A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0
+        A0FFA4A0A0FF000000FF000000FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0
+        A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0
+        A0FFA4A0A0FFA4A0A0FF000000FF000000FFA4A0A0FFA4A0A0FF0000FFFF0000
+        FFFFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0
+        A0FFA4A0A0FFA4A0A0FFA4A0A0FF000000FF000000FFA4A0A0FF0000FFFFA4A0
+        A0FF0000FFFFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0
+        A0FFA4A0A0FFA4A0A0FFA4A0A0FF000000FF000000FFA4A0A0FF0000FFFF0000
+        FFFF0000FFFFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0
+        A0FFA4A0A0FFA4A0A0FF000000FF000000FFA4A0A0FFA4A0A0FF0000FFFFA4A0
+        A0FF0000FFFFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0
+        A0FFA4A0A0FF000000FF000000FFA4A0A0FFA4A0A0FFA4A0A0FF0000FFFF0000
+        FFFFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0
+        A0FF000000FF000000FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0
+        A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FF0000
+        00FF000000FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FF000000FF000000FFA4A0
+        A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FF0000
+        00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FFA4A0
+        A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0
+        A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0
+        A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FF
+      }
+      GroupIndex = 1
+      OnClick = SpeedSumBogfoertClick
+    end
+    object SpeedSumKassekladde: TSpeedButton
+      Left = 520
+      Height = 22
+      Hint = 'Slutsaldo = Sum af debet - kredit af alle bilag i kassekladde'
+      Top = 1
+      Width = 23
+      Glyph.Data = {
+        36040000424D3604000000000000360000002800000010000000100000000100
+        2000000000000004000064000000640000000000000000000000A4A0A0FFA4A0
+        A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0
+        A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0
+        A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0
+        A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0
+        A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0
+        A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FF0000
+        00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FFA4A0
+        A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FF0000
+        00FF000000FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FF000000FFA4A0
+        A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0
+        A0FF000000FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FF000000FF000000FFA4A0
+        A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0
+        A0FFA4A0A0FF000000FF000000FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0
+        A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0
+        A0FFA4A0A0FFA4A0A0FF000000FF000000FFA4A0A0FFA4A0A0FF0000FFFFA4A0
+        A0FFA4A0A0FF0000FFFFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0
+        A0FFA4A0A0FFA4A0A0FFA4A0A0FF000000FF000000FFA4A0A0FF0000FFFFA4A0
+        A0FF0000FFFFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0
+        A0FFA4A0A0FFA4A0A0FFA4A0A0FF000000FF000000FFA4A0A0FF0000FFFF0000
+        FFFFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0
+        A0FFA4A0A0FFA4A0A0FF000000FF000000FFA4A0A0FFA4A0A0FF0000FFFFA4A0
+        A0FF0000FFFFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0
+        A0FFA4A0A0FF000000FF000000FFA4A0A0FFA4A0A0FFA4A0A0FF0000FFFFA4A0
+        A0FFA4A0A0FF0000FFFFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0
+        A0FF000000FF000000FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0
+        A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FF0000
+        00FF000000FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FF000000FF000000FFA4A0
+        A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FF0000
+        00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FFA4A0
+        A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0
+        A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0
+        A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FFA4A0A0FF
+      }
+      GroupIndex = 1
+      OnClick = SpeedSumKassekladdeClick
+    end
+  end
+  object Panel1: TPanel
+    Left = 0
+    Height = 89
+    Top = 512
+    Width = 699
+    Align = alBottom
+    ClientHeight = 89
+    ClientWidth = 699
+    Color = 8454143
+    ParentColor = False
+    TabOrder = 3
+    object GroupBoxIndstillinger: TGroupBox
+      Left = 4
+      Height = 73
+      Top = 8
+      Width = 364
+      Caption = ' Indstillinger '
+      ClientHeight = 53
+      ClientWidth = 360
+      TabOrder = 0
+      object ComboPeriode: TComboBox
+        Left = 10
+        Height = 23
+        Hint = 'Hvilken periode'
+        Top = 16
+        Width = 100
+        ItemHeight = 15
+        OnChange = ComboPeriodeChange
+        Style = csDropDownList
+        TabOrder = 0
+      end
+      object Label1: TLabel
+        Left = 9
+        Height = 15
+        Top = 0
+        Width = 43
+        Caption = '&Periode:'
+        FocusControl = ComboPeriode
+        ParentColor = False
+      end
+      object ComboKassekladde: TComboBox
+        Left = 122
+        Height = 23
+        Top = 16
+        Width = 140
+        ItemHeight = 15
+        OnChange = ComboKassekladdeChange
+        Style = csDropDownList
+        TabOrder = 1
+      end
+      object Label4: TLabel
+        Left = 122
+        Height = 15
+        Top = 0
+        Width = 109
+        Caption = '&Hvilken kassekladde:'
+        FocusControl = ComboKassekladde
+        ParentColor = False
+      end
+    end
+    object GroupBox1: TGroupBox
+      Left = 376
+      Height = 73
+      Top = 8
+      Width = 145
+      Caption = ' Dato: '
+      TabOrder = 1
+    end
+    object GroupBox2: TGroupBox
+      Left = 528
+      Height = 73
+      Top = 8
+      Width = 145
+      Caption = ' Formål: '
+      ClientHeight = 53
+      ClientWidth = 141
+      TabOrder = 2
+      object ComboFormaal: TComboBox
+        Left = 6
+        Height = 23
+        Hint = 'Vælg bilag udfra formål'
+        Top = 0
+        Width = 128
+        ItemHeight = 15
+        OnChange = ComboFormaalChange
+        Style = csDropDownList
+        TabOrder = 0
+      end
+    end
+  end
+  object ActionList1: TActionList
+    Images = MainDataModule.ImageList1
+    left = 422
+    top = 48
+    object Luk: TAction
+      Category = 'Kassekladde'
+      Caption = 'Luk'
+      Hint = 'Luk vindue'
+      ImageIndex = 0
+      OnExecute = LukExecute
+      ShortCut = 16460
+    end
+    object NytBilag: TAction
+      Category = 'Kassekladde'
+      Caption = '&Nyt bilag'
+      Hint = 'Nyt bilag'
+      ImageIndex = 29
+      OnExecute = NytBilagExecute
+      ShortCut = 114
+    end
+    object Slet: TAction
+      Category = 'Kassekladde'
+      Caption = 'Slet'
+      Hint = 'Slet bilag'
+      ImageIndex = 30
+      OnExecute = SletExecute
+    end
+    object RedigerAfstemningskonti: TAction
+      Category = 'Kassekladde'
+      Caption = '&Rediger afstemningskonti'
+      Hint = 'Rediger eller indlæg afstemningskonti'
+      ImageIndex = 32
+      OnExecute = RedigerAfstemningskontiExecute
+    end
+    object TjekKassekladde: TAction
+      Category = 'Kassekladde'
+      Caption = 'TjekKassekladde'
+      Hint = 'Undersøge '
+      ImageIndex = 33
+      OnExecute = TjekKassekladdeExecute
+    end
+    object Bogfoer: TAction
+      Category = 'Kassekladde'
+      Caption = 'Bogfør'
+      Hint = 'Bogfør bilag'
+      ImageIndex = 34
+      OnExecute = BogfoerExecute
+    end
+    object VisAfstemningsKonti: TAction
+      Category = 'Kassekladde'
+      Caption = 'Vis afstemningskonti'
+      Checked = True
+      Hint = 'Vis afstemningskonti'
+      ImageIndex = 36
+      OnExecute = VisAfstemningsKontiExecute
+    end
+    object BogfoerAlle: TAction
+      Category = 'Kassekladde'
+      Caption = 'Bogfør alle'
+      Hint = 'Bogfører alle bilag i kassekladde'
+      ImageIndex = 35
+      OnExecute = BogfoerAlleExecute
+      ShortCut = 16449
+    end
+    object Udskriv_Kassekladde: TAction
+      Category = 'Kassekladde'
+      Caption = 'Udskriv'
+      Hint = 'Udskriv rapport'
+      ImageIndex = 26
+      OnExecute = Udskriv_KassekladdeExecute
+    end
+    object Udskriv_kontoplan: TAction
+      Category = 'Kontoplan'
+      Caption = '&Udskriv'
+      Hint = 'Udskriv kontoplan'
+      ImageIndex = 26
+      OnExecute = Udskriv_kontoplanExecute
+      ShortCut = 16469
+    end
+    object Udskriv_Postering: TAction
+      Category = 'Postering'
+      Caption = '&Udskriv'
+      Hint = 'Udskriv posteringsoversigt'
+      ImageIndex = 26
+      OnExecute = Udskriv_PosteringExecute
+      ShortCut = 16469
+    end
+  end
+  object ZQuery1: TZQuery
+    Params = <>
+    left = 504
+    top = 48
+  end
+  object ZQuery2: TZQuery
+    Params = <>
+    left = 544
+    top = 48
+  end
+  object PopupMenuRediger: TPopupMenu
+    left = 224
+    top = 64
+    object MenuItem3: TMenuItem
+      Action = RedigerAfstemningskonti
+    end
+    object MenuItem2: TMenuItem
+      Action = VisAfstemningsKonti
+    end
+    object MenuItem1: TMenuItem
+      Action = Luk
+      Bitmap.Data = {
+        36040000424D3604000000000000360000002800000010000000100000000100
+        2000000000000004000064000000640000000000000000000000000000000000
+        00001D53A1502059AAFF174079FF000000570000004D00000021000000000000
+        00000000000000000000FFFFFF00FFFFFF00FFFFFF00FFFFFF00000000001C50
+        9C221F58A8EF235FB1FF163C72FF000000430000003E0000003A000000260000
+        00080000000000000000FFFFFF00FFFFFF00FFFFFF00FFFFFF00000000001C52
+        9FD3215EB1FF2964B4FF15396DFF0000002E00000029000000230000001E0000
+        00180000000500000000FFFFFF00FFFFFF00FFFFFF00FFFFFF002360B3FF1E54
+        A0FF2564B7FF326EBCFF14386AFF000000380000002E00000024000000180000
+        00092360B3FF00000000FFFFFF00FFFFFF00FFFFFF00FFFFFF002564B7FF2159
+        A6FF296ABDFF3B77C2FF133565FF000000380000002E00000024000000180000
+        00090E8544FF007300FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00647388FF245E
+        AAFF2C6FC2FF406EA7FF394A62FF000000380000002E00000024000000180094
+        00A4009900FF007300FFFFFFFF00FFFFFF00FFFFFF00FFFFFF002A6ABEFF2763
+        AFFF2F74C8FF5A7696FF4E5F77FF000000380000002E000000240084006F0099
+        00FF6BC970FF007300FF007300FF007300FF007300FF007300FF2C6DC1FF2966
+        B4FF3279CDFF5491D5FF143667FF000000380000002E007B0077009900FF57C0
+        5BFF4ABC4FFF58C35EFF5FC666FF66CA6EFF75D07DFF007300FF2D70C3FF2B6A
+        B7FF347DD0FF5C99DBFF143667FF000000380000002E009900FF7ECE80FF42B8
+        46FF36B43BFF3EB844FF46BC4CFF50C157FF66CA6EFF007300FF2F72C6FF2D6C
+        BAFF3780D3FF64A0E0FF143667FF000000380000002E007B0077009900FF80CF
+        82FF71CA74FF6CC870FF77CD7CFF7ED082FF68C96EFF007300FF3074C8FF2E6E
+        BCFF3882D6FF61A0E1FF143667FF000000380000002E000000240084006F0099
+        00FF84D086FF009900FF009900FF009900FF009900FF009900FF66768BFF2F70
+        BEFF3F88D9FF89BFEEFF2F6296BF000000380000002E00000024000000180094
+        00A4009900FF009900FF000000000000000000000000000000003176CAFF3374
+        C0FF77B2E8FF719EC3BF00030546000000380000002E00000024000000180000
+        0009128C4CFF009900FF000000000000000000000000000000003277CBFF4C8C
+        CFFF4582C0DE0003054600030546000000380000002E00000024000000180000
+        00093277CBFF00000000000000000000000000000000000000003277CBFF3277
+        CBFF3277CBFF3277CBFF3277CBFF3277CBFF3277CBFF3277CBFF3277CBFF3277
+        CBFF3277CBFF0000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000
+      }
+    end
+  end
+  object ZBogfoerKassekladde: TZQuery
+    Params = <>
+    left = 392
+    top = 112
+  end
+  object ZBogfoerMoms: TZQuery
+    Params = <>
+    left = 424
+    top = 112
+  end
+  object ZBogfoerBilag: TZQuery
+    Params = <>
+    left = 456
+    top = 112
+  end
+  object ZTable1: TZTable
+    left = 525
+    top = 112
+  end
+end

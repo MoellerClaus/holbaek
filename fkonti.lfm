@@ -1,0 +1,712 @@
+object FormKontigentSeAendre: TFormKontigentSeAendre
+  Left = 585
+  Height = 446
+  Top = 193
+  Width = 375
+  Caption = 'Se og ændre kontingent registrering...'
+  ClientHeight = 446
+  ClientWidth = 375
+  OnCreate = FormCreate
+  OnShow = FormShow
+  LCLVersion = '2.0.6.0'
+  object ToolBar1: TToolBar
+    Left = 0
+    Height = 26
+    Top = 0
+    Width = 375
+    Caption = 'ToolBar1'
+    Images = ImageList1
+    TabOrder = 0
+    object ToolButton1: TToolButton
+      Left = 1
+      Top = 2
+      Action = Luk
+    end
+    object ToolButton6: TToolButton
+      Left = 24
+      Top = 2
+      Action = Help
+    end
+  end
+  object PanelNederst: TPanel
+    Left = 0
+    Height = 41
+    Top = 405
+    Width = 375
+    Align = alBottom
+    ClientHeight = 41
+    ClientWidth = 375
+    Color = clMenuHighlight
+    ParentColor = False
+    TabOrder = 1
+    object DBNavigator1: TDBNavigator
+      Left = 32
+      Height = 25
+      Top = 8
+      Width = 241
+      BevelOuter = bvNone
+      ChildSizing.EnlargeHorizontal = crsScaleChilds
+      ChildSizing.EnlargeVertical = crsScaleChilds
+      ChildSizing.ShrinkHorizontal = crsScaleChilds
+      ChildSizing.ShrinkVertical = crsScaleChilds
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 100
+      ClientHeight = 25
+      ClientWidth = 241
+      DataSource = DataFraKontigent
+      OnClick = DBNavigator1Click
+      Options = []
+      TabOrder = 0
+      VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast, nbPost, nbCancel, nbRefresh]
+    end
+    object BitBtn1: TBitBtn
+      Left = 288
+      Height = 30
+      Top = 3
+      Width = 75
+      Action = Luk
+      TabOrder = 1
+    end
+  end
+  object PageControl1: TPageControl
+    Left = 0
+    Height = 379
+    Top = 26
+    Width = 375
+    ActivePage = TabSheet1
+    Align = alClient
+    Images = ImageList2
+    TabIndex = 0
+    TabOrder = 2
+    object TabSheet1: TTabSheet
+      Caption = 'Informationer'
+      ClientHeight = 351
+      ClientWidth = 367
+      ImageIndex = 0
+      object PageColor1: TShape
+        Left = 296
+        Height = 72
+        Top = 232
+        Width = 73
+        Brush.Color = clSilver
+        Pen.Style = psClear
+      end
+      object GroupBox1: TGroupBox
+        Left = 0
+        Height = 233
+        Top = 8
+        Width = 360
+        Caption = 'Oplysninger på indbetalingskort'
+        ClientHeight = 213
+        ClientWidth = 356
+        TabOrder = 0
+        object LabelMedlemNavn: TLabel
+          Left = 16
+          Height = 16
+          Top = 27
+          Width = 106
+          Caption = 'LabelMedlemNavn'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clGreen
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsItalic]
+          ParentColor = False
+          ParentFont = False
+        end
+        object DBText2: TDBText
+          Left = 16
+          Height = 15
+          Top = 48
+          Width = 41
+          DataField = 'AltTekst'
+          DataSource = DataFraKontigent
+          ParentColor = False
+        end
+        object DateEditRettidig: TJDBLabeledDateEdit
+          Left = 128
+          Height = 23
+          Hint = 'Dato for rettidig indbetaling'
+          Top = 85
+          Width = 80
+          DisplayFormat = 'dd-mm-yyyy'
+          DataField = 'SENESTRETTIDIGINDBETALING'
+          DataSource = DataFraKontigent
+          ButtonWidth = 23
+          EditLabel.Height = 15
+          EditLabel.Width = 80
+          EditLabel.Caption = 'Rettidig:'
+          EditLabel.ParentColor = False
+          TabOrder = 0
+        end
+        object DateEditIndbetaltd: TJDBLabeledDateEdit
+          Left = 240
+          Height = 23
+          Hint = 'Indbetalt dato'
+          Top = 85
+          Width = 80
+          DataField = 'DATOFORINDBETALINGAFKONT'
+          DataSource = DataFraKontigent
+          ButtonWidth = 23
+          EditLabel.Height = 15
+          EditLabel.Width = 80
+          EditLabel.Caption = 'Indbetalt d.'
+          EditLabel.ParentColor = False
+          TabOrder = 1
+        end
+        object EditBeloebOpkraevet: TJDBLabeledCurrencyEdit
+          Left = 19
+          Height = 23
+          Hint = 'Det opkrævede beløb'
+          Top = 128
+          Width = 96
+          DisplayFormat = '#0.00'
+          DataField = 'BELOEBOPKRAEVET'
+          DataSource = DataFraKontigent
+          Decimals = 2
+          NegativeColor = clDefault
+          Alignment = taRightJustify
+          EditLabel.Height = 15
+          EditLabel.Width = 96
+          EditLabel.Caption = 'Beløb opkrævet:'
+          EditLabel.ParentColor = False
+          TabOrder = 2
+        end
+        object EditBeloebIndbetalt: TJDBLabeledCurrencyEdit
+          Left = 128
+          Height = 23
+          Hint = 'Beløb indbetalt'
+          Top = 128
+          Width = 104
+          DisplayFormat = '#0.00'
+          DataField = 'BELOEBINDBETALT'
+          DataSource = DataFraKontigent
+          Decimals = 0
+          NegativeColor = clDefault
+          Alignment = taRightJustify
+          EditLabel.Height = 15
+          EditLabel.Width = 104
+          EditLabel.Caption = '&Indbetalt:'
+          EditLabel.ParentColor = False
+          TabOrder = 3
+        end
+        object DBStatusRadioGroup: TDBRadioGroup
+          Left = 16
+          Height = 43
+          Hint = 'Viser status på indbetalingkort'
+          Top = 160
+          Width = 328
+          AutoFill = True
+          Caption = '&Status'
+          ChildSizing.LeftRightSpacing = 6
+          ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+          ChildSizing.EnlargeVertical = crsHomogenousChildResize
+          ChildSizing.ShrinkHorizontal = crsScaleChilds
+          ChildSizing.ShrinkVertical = crsScaleChilds
+          ChildSizing.Layout = cclLeftToRightThenTopToBottom
+          ChildSizing.ControlsPerLine = 3
+          Columns = 3
+          DataField = 'AFSLUTTET'
+          DataSource = DataFraKontigent
+          Items.Strings = (
+            'Afsluttet'
+            'Mangler'
+            'Ikke med'
+          )
+          TabOrder = 4
+          Values.Strings = (
+            '0'
+            '1'
+            '2'
+          )
+        end
+        object DBText1: TDBText
+          Left = 18
+          Height = 15
+          Top = 8
+          Width = 41
+          DataField = 'girobilagsnummer'
+          DataSource = DataFraKontigent
+          ParentColor = False
+        end
+        object DBText3: TDBText
+          Left = 165
+          Height = 15
+          Top = 8
+          Width = 41
+          Alignment = taRightJustify
+          DataField = 'id'
+          DataSource = DataFraKontigent
+          ParentColor = False
+        end
+        object clmCombobox1: TclmCombobox
+          Left = 264
+          Height = 22
+          Top = 134
+          Width = 180
+          Columns = <>
+          ItemHeight = 16
+          TabOrder = 5
+        end
+        object EditDateUdsendt: TDBDateEdit
+          Left = 16
+          Height = 23
+          Top = 80
+          Width = 103
+          CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames]
+          DateOrder = doNone
+          ButtonWidth = 23
+          NumGlyphs = 1
+          MaxLength = 0
+          TabOrder = 6
+          Text = 'EditDateUdsendt'
+          DataField = 'DatoForUdsendelse'
+          DataSource = DataFraKontigent
+        end
+        object DateTimePicker1: TDateTimePicker
+          Left = 95
+          Height = 23
+          Top = 48
+          Width = 83
+          CenturyFrom = 1941
+          MaxDate = 2958465
+          MinDate = -53780
+          TabOrder = 7
+          TrailingSeparator = False
+          TextForNullDate = 'NULL'
+          LeadingZeros = True
+          Kind = dtkDate
+          TimeFormat = tf24
+          TimeDisplay = tdHMS
+          DateMode = dmComboBox
+          Date = 43800
+          Time = 0.59484502315172
+          UseDefaultSeparators = True
+          HideDateTimeParts = []
+          MonthNames = 'Long'
+        end
+      end
+      object GroupBox2: TGroupBox
+        Left = 0
+        Height = 105
+        Top = 240
+        Width = 361
+        Caption = ' Der vises '
+        ClientHeight = 85
+        ClientWidth = 357
+        TabOrder = 1
+        object ComboPeriode: TclmCombobox
+          Left = 8
+          Height = 22
+          Top = 16
+          Width = 144
+          Columns = <>
+          ItemHeight = 16
+          OnChange = ComboPeriodeChange
+          TabOrder = 0
+        end
+        object Label1: TLabel
+          Left = 8
+          Height = 15
+          Top = 2
+          Width = 40
+          Caption = '&Periode'
+          FocusControl = ComboPeriode
+          ParentColor = False
+        end
+        object ComboMedlem: TclmCombobox
+          Left = 168
+          Height = 22
+          Top = 16
+          Width = 180
+          Columns = <>
+          ItemHeight = 16
+          OnChange = ComboMedlemChange
+          TabOrder = 1
+        end
+        object Label2: TLabel
+          Left = 168
+          Height = 15
+          Top = 2
+          Width = 47
+          Caption = '&Medlem:'
+          FocusControl = ComboMedlem
+          ParentColor = False
+        end
+        object ComboSortering: TclmCombobox
+          Left = 8
+          Height = 22
+          Hint = 'Bestemmer måden indbetalingskortene bladres igennem på'
+          Top = 56
+          Width = 144
+          Columns = <>
+          ItemHeight = 16
+          TabOrder = 2
+        end
+        object Label3: TLabel
+          Left = 8
+          Height = 15
+          Top = 40
+          Width = 65
+          Caption = '&Rækkefølge:'
+          FocusControl = ComboSortering
+          ParentColor = False
+        end
+      end
+    end
+    object TabSheet2: TTabSheet
+      Caption = 'Indstilling'
+      ClientHeight = 351
+      ClientWidth = 367
+      ImageIndex = 1
+      object PageColor2: TShape
+        Left = 293
+        Height = 72
+        Top = 232
+        Width = 73
+        Brush.Color = clSilver
+        Pen.Style = psClear
+      end
+      object GroupBox3: TGroupBox
+        Left = 8
+        Height = 209
+        Top = 0
+        Width = 345
+        Caption = ' Indstilling bogføring '
+        ClientHeight = 189
+        ClientWidth = 341
+        TabOrder = 0
+        object ComboKonto: TclmCombobox
+          Left = 8
+          Height = 22
+          Hint = 'Vælg konto'
+          Top = 16
+          Width = 328
+          Columns = <>
+          ItemHeight = 16
+          TabOrder = 0
+        end
+        object ComboAfstemning: TclmCombobox
+          Left = 10
+          Height = 22
+          Hint = 'Viser afstemningskonti'
+          Top = 64
+          Width = 326
+          Columns = <>
+          ItemHeight = 16
+          TabOrder = 1
+        end
+        object Label4: TLabel
+          Left = 8
+          Height = 15
+          Top = 0
+          Width = 56
+          Caption = '&Kontoliste:'
+          FocusControl = ComboKonto
+          ParentColor = False
+        end
+        object Label5: TLabel
+          Left = 10
+          Height = 15
+          Top = 48
+          Width = 101
+          Caption = '&Afstemningskonto:'
+          FocusControl = ComboAfstemning
+          ParentColor = False
+        end
+        object BitBtn2: TBitBtn
+          Left = 261
+          Height = 30
+          Top = 152
+          Width = 75
+          Action = Gem
+          TabOrder = 2
+        end
+        object GroupBox4: TGroupBox
+          Left = 10
+          Height = 56
+          Top = 88
+          Width = 326
+          Caption = ' Tekst '
+          ClientHeight = 36
+          ClientWidth = 322
+          TabOrder = 3
+          object CheckMedlemsNr: TCheckBox
+            Left = 8
+            Height = 19
+            Hint = 'Medlemsnr'
+            Top = 8
+            Width = 82
+            Caption = 'MedlemsNr'
+            Checked = True
+            State = cbChecked
+            TabOrder = 0
+          end
+          object CheckMedlemsNavn: TCheckBox
+            Left = 112
+            Height = 19
+            Hint = 'Medlemmets navn'
+            Top = 8
+            Width = 98
+            Caption = 'Medlems navn'
+            Checked = True
+            State = cbChecked
+            TabOrder = 1
+          end
+          object CheckAktivitet: TCheckBox
+            Left = 240
+            Height = 19
+            Hint = 'Aktivitet'
+            Top = 8
+            Width = 64
+            Caption = 'Aktivitet'
+            Checked = True
+            State = cbChecked
+            TabOrder = 2
+          end
+        end
+      end
+    end
+  end
+  object ZQuery1: TZQuery
+    Params = <>
+    left = 152
+    top = 8
+  end
+  object ImageList1: TImageList
+    left = 224
+    top = 8
+    Bitmap = {
+      4C69030000001000000010000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      00000000000000000000000000003277CBFF3277CBFF3277CBFF3277CBFF3277
+      CBFF3277CBFF3277CBFF3277CBFF3277CBFF3277CBFF3277CBFF000000000000
+      00000000000000000000000000003277CBFF4C8CCFFF4582C0DE000305460003
+      0546000000380000002E0000002400000018000000093277CBFF000000000000
+      00000000000000000000000000003176CAFF3374C0FF77B2E8FF719EC3BF0003
+      0546000000380000002E000000240000001800000009128C4CFF009900FF0000
+      000000000000000000000000000066768BFF2F70BEFF3F88D9FF89BFEEFF2F62
+      96BF000000380000002E0000002400000018009400A4009900FF009900FF0000
+      00000000000000000000000000003074C8FF2E6EBCFF3882D6FF61A0E1FF1436
+      67FF000000380000002E000000240084006F009900FF84D086FF009900FF0099
+      00FF009900FF009900FF009900FF2F72C6FF2D6CBAFF3780D3FF64A0E0FF1436
+      67FF000000380000002E007B0077009900FF80CF82FF71CA74FF6CC870FF77CD
+      7CFF7ED082FF68C96EFF007300FF2D70C3FF2B6AB7FF347DD0FF5C99DBFF1436
+      67FF000000380000002E009900FF7ECE80FF42B846FF36B43BFF3EB844FF46BC
+      4CFF50C157FF66CA6EFF007300FF2C6DC1FF2966B4FF3279CDFF5491D5FF1436
+      67FF000000380000002E007B0077009900FF57C05BFF4ABC4FFF58C35EFF5FC6
+      66FF66CA6EFF75D07DFF007300FF2A6ABEFF2763AFFF2F74C8FF5A7696FF4E5F
+      77FF000000380000002E000000240084006F009900FF6BC970FF007300FF0073
+      00FF007300FF007300FF007300FF647388FF245EAAFF2C6FC2FF406EA7FF394A
+      62FF000000380000002E0000002400000018009400A4009900FF007300FFFFFF
+      FF00FFFFFF00FFFFFF00FFFFFF002564B7FF2159A6FF296ABDFF3B77C2FF1335
+      65FF000000380000002E0000002400000018000000090E8544FF007300FFFFFF
+      FF00FFFFFF00FFFFFF00FFFFFF002360B3FF1E54A0FF2564B7FF326EBCFF1438
+      6AFF000000380000002E0000002400000018000000092360B3FF00000000FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00000000001C529FD3215EB1FF2964B4FF1539
+      6DFF0000002E00000029000000230000001E000000180000000500000000FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00000000001C509C221F58A8EF235FB1FF163C
+      72FF000000430000003E0000003A00000026000000080000000000000000FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF0000000000000000001D53A1502059AAFF1740
+      79FF000000570000004D0000002100000000000000000000000000000000FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF007F7F7F029E9E9E3DAFAFAF81B6B6B69CA6A6A66098989817FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00ABAB
+      AB74EDEDEDF5FBFBFBFFF4F4F4FFF2F2F2FFF2F2F2FFF6F6F6FFCBCBCBCD9999
+      991CFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF0099999905C9C9C9C9FCFC
+      FCFFEDEDEDFFDCCFBFFFD2B291FFCFAA83FFD2B9A1FFDCD8D4FFE7E7E7FFE4E4
+      E4F5A5A5A55CFFFFFF00FFFFFF00FFFFFF00FFFFFF00B9B9B9A4FAFAFAFFE5DF
+      D9FFCFA06FFFE6B784FFE8C193FFDFB890FFE4BB8FFFC6935EFFD1B89DFFDFDF
+      DFFFE0E0E0F59999991CFFFFFF00FFFFFF00A1A1A144F9F9F9FDE9E8E7FFD099
+      5DFFEAB476FFD5AC82FFF7F4F1FFFFFFFFFFEAE0D7FFD2A16FFFCE965BFFD1B7
+      9DFFDFDFDFFFC3C3C3CDFFFFFF00FFFFFF00C1C1C1B8F3F3F3FFD6AF84FFE9A6
+      57FFE5A154FFD99B58FFCDA073FFCEAA88FFFFFFFFFFCDAB89FFC98641FFB778
+      3AFFE0DBD8FFE6E6E6FF98989817FFFFFF00D8D8D8E1EAEAEAFFD1924BFFE594
+      34FFDF8C2DFFD98527FFD27D1FFFD2B08FFFFFFFFFFFC0864CFFBE6D19FFB968
+      16FFD2B9A3FFDEDEDEFFA2A2A260FFFFFF00F4F4F4FAE5E5E5FFD4842AFFE38B
+      24FFDD8520FFD77F1CFFCF7D21FFF8F5F3FFD3B9A0FFBF680BFFB96208FFB35C
+      03FFC49B75FFDEDEDEFFADADAD9CFFFFFF00E6E6E6F0E4E4E4FFCF8736FFE38B
+      24FFDD8520FFD77F1CFFCC9964FFFFFFFFFFC07D38FFBF680BFFB96208FFB35C
+      03FFCCAA8AFFDFDFDFFFA6A6A681FFFFFF00CCCCCCCFE7E7E7FFD29959FFE38B
+      24FFDD8520FFD7801DFFCC7C25FFC68540FFC47013FFBF690CFFB96208FFB15B
+      03FFDCCEC0FFDDDDDDFF9898983DFFFFFF00B3B3B392EFEFEFFFDDCEBEFFD986
+      27FFDD8C2AFFDA963EFFD5B998FFFFFFFFFFCB9A5DFFC6822EFFBB670FFFB882
+      4CFFE5E5E5FFD3D3D3F57E7E7E02FFFFFF0099999905D9D9D9E8E2E2E2FFD8B5
+      8EFFD3872DFFD9973FFFC6965FFFD2BBA7FFC78D43FFC6822EFFB57433FFE4DD
+      D8FFDFDFDFFF9F9F9F74FFFFFF00FFFFFF00FFFFFF009F9F9F41ECECECFCDEDE
+      DEFFDECFC0FFCA9155FFC0792EFFBD7120FFBC7E3BFFCCA37AFFE6E6E5FFE0E0
+      E0FFB7B7B7C9FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF009F9F9F41D3D3
+      D3E8E2E2E2FFDFDFDFFFE3E3E3FFE5E5E5FFE4E4E4FFE1E1E1FFD9D9D9FDA9A9
+      A9A497979705FFFFFF00FFFFFF00FFFFFF00FFFFFF0000000009000000210D0D
+      0D3A909090B2B1B1B1E1CBCBCBF6D9D9D9FCB9B9B9EE9C9C9CD25555557B0000
+      00360000001A00000002FFFFFF00FFFFFF00FFFFFF00FFFFFF00000000010000
+      00060000000D000000140000001C0000001D00000017000000100000000A0000
+      0004FFFFFF00FFFFFF00FFFFFF00BC6B3671BC6B3690BC6B36CCBC6B36EEBC6B
+      36FABB6B36FEBB6B36FFBB6A36FFBB6A36FFBC6C39FFBD6E3BFFBB6D3AFFBB6B
+      38EFBB703ECBB6693554FFFFFF00BC6B369BF6E0D1FFF7E0D1FFFEFBF8FFFEFB
+      F7FFFDF9F6FFFCF5F0FFFAF0EAFFFBF2EDFFFDF9F6FFFDFAF7FFFBF1EBFFF8E9
+      DFFEECD0BDFBC9895EECB5693563BC6B36D8F6DFD1FFE9AA80FFFEFAF6FFFDFA
+      F6FFC88C64FFFBF3EEFFFBF1EAFFFCF6F2FFFEFBF8FFFCF6F1FFF9ECE2FFF8E7
+      DBFFEED0BAFFECD0BDFFBB703EF8BC6B36F0F6DFD0FFE8A87EFFFCF6F1FFFCF6
+      F1FFC88C64FFFAF1E9FFFBF4EEFFFDFAF7FFFDF9F6FFFAF0E8FFF8E8DDFFF7E6
+      DBFFE1A37AFFEFD5C3FFB76935FEBC6B36FAF5DDCCFFE7A87EFFFAF0E8FFFAF0
+      E8FFC98D66FFFAF0E9FFFDF8F3FFFEFAF8FFFCF4EFFFF9E9DFFFF7E7DBFFF7E5
+      D9FFE0A278FFE7C2A9FFB66835FFBB6B36FEF4DCC9FFE7A77DFFF9ECE1FFF9EC
+      E1FFF9EDE3FFFCF4EEFFFDFAF7FFFDF7F3FFFAEDE5FFF7E7DBFFF7E5D9FFF6E5
+      D8FFDEA077FFE4BEA4FFB46734FFBB6B36FFF4D9C7FFE6A67DFFC88C64FFC98D
+      65FFC98E67FFCB926CFFCB926DFFCA9069FFC88C65FFC88C64FFC88C64FFC88C
+      64FFDA9C74FFE1BA9FFFB36634FFBB6A36FFF2D8C5FFE3A47BFFE3A37AFFE3A4
+      7AFFE2A47BFFE2A37BFFE1A37BFFE1A279FFDFA077FFDE9F76FFDD9E74FFDB9C
+      72FFDC9D74FFDDB59AFFB16534FFBB6A36FFF2D5C2FFE3A37AFFE3A37AFFE2A3
+      7BFFE2A37BFFE2A47BFFE1A279FFE0A178FFDEA077FFDE9E75FFDC9D74FFDA9B
+      73FFD99B73FFDAB095FFAF6433FFBB6A36FFF0D2BEFFE2A37AFFE2A37AFFE1A3
+      7AFFE2A37BFFE1A37BFFE0A178FFDE9F77FFDD9F76FFDC9D74FFD99B72FFD899
+      71FFD69970FFD5AB8EFFAD6333FFBA6A36FFEFD0BBFFE2A27AFFFEFBF8FFFEFB
+      F8FFFEFBF8FFFEFBF8FFFEFBF8FFFEFBF8FFFEFBF8FFFEFBF8FFFEFBF8FFFEFB
+      F8FFD3966DFFD2A78AFFAB6232FFBB6B38FFEFCEB8FFE1A279FFFEFAF7FF62C0
+      88FF62C088FF62C088FF62C088FF62C088FF62C088FF62C088FF62C088FFFDF9
+      F6FFCF936AFFCEA384FFAA6132FFBB6C38FFEECCB6FFE1A27AFFFEFAF7FFBFDC
+      C2FFBFDCC2FFBFDCC2FFBFDCC2FFBFDCC2FFBFDCC2FFBFDCC2FFBFDCC2FFFDF9
+      F6FFCD9068FFCC9E81FFA86132FFBA6B37FEEDCAB3FFE0A27AFFFEFAF7FF62C0
+      88FF62C088FF62C088FF62C088FF62C088FF62C088FF62C088FF62C088FFFDF9
+      F6FFCA8D65FFC99B7CFFA76031FEBA6A35DEEBC6ADFFEAC5ADFFFEFBF8FFFEFB
+      F8FFFEFBF8FFFEFBF8FFFEFBF8FFFEFBF8FFFEFBF8FFFEFBF8FFFEFBF8FFFEFB
+      F8FFC89A7CFFC79879FFA76031EDBA6A3600B96935B5B86935EEB76835FFB568
+      35FFB46734FFB26634FFB06533FFAE6433FFAC6332FFAA6232FFA96132FFA860
+      31FFA76031FEA66031F1A86131C4
+    }
+  end
+  object PopupMenu1: TPopupMenu
+    left = 256
+    top = 8
+    object MenuItem1: TMenuItem
+      Caption = '&Luk'
+      Hint = 'Luk vindue'
+      ImageIndex = 0
+      ShortCut = 16460
+    end
+  end
+  object ActionList1: TActionList
+    Images = ImageList1
+    left = 288
+    top = 8
+    object Luk: TAction
+      Category = 'Diverse_Moms'
+      Caption = '&Luk'
+      Hint = 'Luk vindue'
+      ImageIndex = 0
+      OnExecute = LukExecute
+      ShortCut = 16460
+    end
+    object Help: TAction
+      Category = 'Diverse_Moms'
+      Caption = 'Help'
+      Hint = 'Hjælp'
+      ImageIndex = 1
+      ShortCut = 16456
+    end
+    object Gem: TAction
+      Caption = '&Gem'
+      Hint = 'Gem indstillinger'
+      ImageIndex = 2
+      OnExecute = GemExecute
+    end
+  end
+  object ZQueryKontingent: TZQuery
+    Connection = MainDataModule.ZConnection1
+    SQL.Strings = (
+      'Select * from kontingent'
+    )
+    Params = <>
+    left = 184
+    top = 8
+  end
+  object ImageList2: TImageList
+    left = 336
+    top = 8
+    Bitmap = {
+      4C69020000001000000010000000D075020CE4A54CC8F3D39BF6F1D29BF3F1D1
+      99F3F1D39AF3F3D7A1F3F2D49CF3F2D49CF3F7DDA3F3F2D49AF3F2D59BF3F3D4
+      9CF3F3D498F9E7A744A700000000DE9F4CCFFFFFEFFFFBE7BFFFFBE6BDFFFCE7
+      BDFFFEE9C0FFF4D39EFFE9C481FFE1B77CFFE2BC8CFFFEECC1FFFCE9C0FFFCE9
+      BEFFFDEFCBFFFFFAE7FFDD922F8FEBC385FEFBE0A6FFF4D38FFFF6D693FFF5D6
+      96FFF4D48EFFF1CC88FFFEFDF9FFFFFFFFFFDBB37EFFF6D48FFFF6DA9DFFF8DA
+      9CFFF7D894FFFFEDC2FFE8B76BEDE6B161F2F9DB9DFFF5D393FFF5D597FFF5D5
+      98FFF6D290FFF4D69AFFFFFFFFFFFFFFFFFFE7C38EFFF6D494FFF7DB9EFFF7DA
+      9FFFF7D99DFFFCE6B1FFE3AB57F7E0A855F3F7D99AFFF3CF8EFFF3D190FFF4D2
+      93FFF6D291FFEEC378FFECCB9BFFE7C596FFECC47DFFF7D795FFF6D697FFF6D6
+      98FFF6D698FFFBE3ABFFE3AA53F3DEA454F3F6D595FFF2CB88FFF2CD8BFFF3D0
+      91FFF4D18FFFECB95BFFEBD3B4FFE5C8A5FFEBBA65FFF5D495FFF4D598FFF5D3
+      94FFF5D292FFF9DDA1FFE6B360F3DA9E4BF3F4D591FFF1CF90FFF2D18FFFF1CB
+      82FFEFC06BFFEAB96DFFFFFFFFFFFFFFFFFFEBBA6CFFF1C270FFF3CE8AFFF4D4
+      98FFF3D499FFF8D9A0FFE1AB58F3DA9F4CF3F3D085FFE8B151FFE5A73EFFE4A4
+      33FFE39719FFD89543FFFFFFFFFFFFFFFFFFD99646FFE69B20FFEAAB3FFFEBB0
+      4BFFEEBC60FFF5D797FFE0A95AF3C9781EF3E69D25FFE0911AFFE19420FFE29A
+      27FFE19116FFD49046FFFFFFFFFFFFFFFFFFD4924AFFE3981EFFE7A130FFE6A1
+      2DFFE5A02CFFEDAD3AFFD79030F3BA600CF9E3961EFFDC8F1EFFDE9021FFE093
+      22FFDD890BFFCF8947FFFFFFFFFFFFFFFFFFCD8A4BFFDF9014FFE49B2BFFE39C
+      2DFFE39C2FFFE7A431FFD1811DF4B75C08EFE49215FFD88514FFD98916FFDC8B
+      18FFD98510FFC77016FFFFFFFFFFFFFFFFFFCD781CFFDE8B17FFDF9424FFE095
+      23FFDF9524FFECA72AFFCB7618FF993C0057CB7106FFDC870AFFDA840CFFDA84
+      0EFFDC8A13FFD37900FFC4722AFFC9792DFFDF8405FFDD8C1BFFDB8B1AFFDF90
+      1DFFE4991FFFD68118FFA3470781000000009236003B9E4000B6A24200B4A143
+      00B4A04100B4AA4E03B4B65400B4AD4B00AFB85F0AF7DE890DFFDB8811FFBF65
+      0AF9A74805BC9D3C015000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000008426001DB05401F2E48A08FFA94B
+      00CB000000000000000000000000000000000000000000000000000000000000
+      00000000000000000000000000000000000000000000892E0011A34C00F3A64A
+      00E0000000000000000000000000000000000000000000000000000000000000
+      00000000000000000000000000000000000000000000000000007E2F001A8231
+      00A400000000000000000000000000000000323232421E1E1E2A000000000000
+      0000000000000000000000000000000000000000000664646466BCBCBCC3AFAF
+      AFBE0000000F00000000000000000000000059595989CBCBCBF63E3E3E390000
+      000000000000000000000000000000000000979797A3FFFFFFFFE4E4E4FD3D3D
+      3D6C0000000000000005000000080000000000000007858585B3C5C5C5DB0000
+      000E00000000000000000000000036363641EFEFEFFFF7F7F7FF636363880000
+      000000000000989898A15555556B000000000000000000000002545454948686
+      86B60000000600000000000000004A4A4A60EFEFEFFFE9E9E9FFC9C9C9E03333
+      333777777782FCFCFCFF46464665000000000000000000000000000000005E5E
+      5E9F7B7B7BAF000000030000000020202037DDDDDDFFE3E3E3FFE7E7E7FFE4E4
+      E4FAEFEFEFFFCACACAF71010102E000000000000000000000000000000000000
+      00046A6A6AAE6F6F6FA200000006919191A1E8E8E8FFE3E3E3FFE5E5E5FFEBEB
+      EBFFD4D4D4FF4D4D4D9000000000000000000000000000000000000000000000
+      000000000004676767AAB6B6B6E6EEEDEDFFDEDFE1FF656567B2494949925D5D
+      5DAB252525650000000700000000000000000000000000000000000000000000
+      00000000000B989698B5D9D8D8FFD6D9DCFFA29C93DD0909001C000000000000
+      0000000000000000000000000000000000000000000000000000000000000E0E
+      0E12B7B7B7C0D5D4D4FFCCCED0FFCCB69FFFEBB060FF9B7B499F000000010000
+      00000000000000000000000000000000000000000000000000000A151518B3B3
+      B3C8E6E4E5FFE9E9EAFF999B9DE4854B13DCCF812CFFE9AE5DFF8E7145960000
+      000000000000000000000000000000000000000000001919191EBAB9BAD0E2E1
+      E1FFEBEBEBFFD3D3D3F8181C1C48000000297D420AE3CC8232FFEAAE5DFF7D65
+      3C88000000000000000000000000000000001C1C1C24CCCCCCDCE8E7E7FFE4E4
+      E4FFE5E5E5FF3636366B00000000000000000C04003B84450BEBCC8232FFE8AD
+      5CFF745D377B00000000000000000E0E0E12C4C4C4D7706E6EA89E9E9EC6F1F1
+      F1FF4C4C4C8800000000000000000000000000000000120700468B470BF1CC83
+      33FFE6AB5BFF634E2E6E000000006C6C6C78F5F5F5FF6C6C6C7FC0C0C0D86A6A
+      6AAC00000003000000000000000000000000000000000000000015090052904B
+      0BF7CA8233FFEFB05DFF564225585C5C5C79F4F4F4FFF4F4F4FF777777B50000
+      000E000000000000000000000000000000000000000000000000000000001B0A
+      005EA2560FFFBD7C34F32B201147000000004040406A323232600000000B0000
+      0000000000000000000000000000000000000000000000000000000000000000
+      00002410005B1B0B034100000000
+    }
+  end
+  object DataFraKontigent: TDataSource
+    DataSet = ZQueryKontingent
+    left = 288
+    top = 40
+  end
+  object ZQueryMedlem: TZQuery
+    Params = <>
+    left = 320
+    top = 360
+  end
+  object DataFraMedlem: TDataSource
+    DataSet = ZQueryMedlem
+    left = 288
+    top = 72
+  end
+end

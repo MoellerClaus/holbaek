@@ -1,0 +1,18 @@
+object BackupForm: TBackupForm
+  Left = 256
+  Height = 240
+  Top = 145
+  Width = 320
+  Caption = 'Backup...'
+  ClientHeight = 240
+  ClientWidth = 320
+  LCLVersion = '2.0.6.0'
+  object Label1: TLabel
+    Left = 51
+    Height = 15
+    Top = 74
+    Width = 75
+    Caption = 'Comes soon...'
+    ParentColor = False
+  end
+end

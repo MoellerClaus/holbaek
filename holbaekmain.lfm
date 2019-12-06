@@ -1,0 +1,385 @@
+object MainForm: TMainForm
+  Left = 491
+  Height = 402
+  Top = 107
+  Width = 1377
+  Caption = 'MainForm'
+  ClientHeight = 382
+  ClientWidth = 1377
+  Menu = MainMenu1
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  LCLVersion = '2.0.6.0'
+  object ToolBar1: TToolBar
+    Left = 0
+    Height = 26
+    Top = 0
+    Width = 1377
+    Caption = 'ToolBar1'
+    Images = MainDataModule.ImageList1
+    TabOrder = 0
+    object ToolButton1: TToolButton
+      Left = 1
+      Top = 2
+      Action = Luk
+    end
+  end
+  object StatusBar1: TStatusBar
+    Left = 0
+    Height = 23
+    Top = 359
+    Width = 1377
+    Panels = <    
+      item
+        Width = 100
+      end    
+      item
+        Width = 50
+      end>
+    SimplePanel = False
+  end
+  object MainMenu1: TMainMenu
+    Images = MainDataModule.ImageList1
+    left = 620
+    top = 60
+    object MenuItem7: TMenuItem
+      Caption = 'Filer'
+      object MenuItem16: TMenuItem
+        Action = Luk
+      end
+    end
+    object MenuForening: TMenuItem
+      Caption = 'F&orening'
+      Hint = 'Forening'
+      object MenuItem28: TMenuItem
+        Action = Forening_Skift
+      end
+    end
+    object MenuItem20: TMenuItem
+      Caption = 'Medlemmer'
+      object MenuItem21: TMenuItem
+        Action = MedlemOplys
+      end
+      object MenuItem29: TMenuItem
+        Action = MedlemFind
+      end
+    end
+    object MenuItem25: TMenuItem
+      Caption = 'Aktiviteter'
+      object MenuItem26: TMenuItem
+        Action = Aktivitet_Massetildeling
+      end
+    end
+    object MenuItem6: TMenuItem
+      Caption = 'Ø&konomi'
+      Hint = 'Økonomi-funktioner'
+      object MenuItem9: TMenuItem
+        Action = Kassekladde_Start
+      end
+      object MenuItem15: TMenuItem
+        Action = SeKontoAction
+      end
+    end
+    object MenuItem30: TMenuItem
+      Caption = 'Kontingen&t'
+      Hint = 'Kontingent funktionaliteten'
+      object MenuItem31: TMenuItem
+        Action = Kontingent_SeAendre
+      end
+      object MenuItem32: TMenuItem
+        Action = Kontigent_Manual_Gen
+      end
+      object MenuItem34: TMenuItem
+        Action = Kontingent_Aktivitet_Gen
+      end
+      object MenuItem35: TMenuItem
+        Caption = '-'
+      end
+      object MenuItem37: TMenuItem
+        Action = Kontingent_edit_Tekst
+      end
+      object MenuItem36: TMenuItem
+        Action = Udskriv_Send
+      end
+    end
+    object Diverse: TMenuItem
+      Caption = '&Diverse'
+      Hint = 'Indstillinger'
+      object Backup: TMenuItem
+        Caption = 'Backup'
+        Hint = 'Tager backup'
+        OnClick = BackupClick
+      end
+      object Definitioner: TMenuItem
+        Caption = 'Definitioner'
+        Hint = 'Basis tabeller'
+        object MenuItem11: TMenuItem
+          Action = Kontoplan_Start
+        end
+        object MenuItem8: TMenuItem
+          Action = PeriodeDef_Start
+        end
+        object MenuItem10: TMenuItem
+          Action = MomsDef_Start
+        end
+        object MenuItem33: TMenuItem
+          Action = RabatDef_Start
+        end
+        object MenuItem12: TMenuItem
+          Action = OkoMaerke_Start
+        end
+        object MenuItem13: TMenuItem
+          Action = KassekladdeDef_Start
+        end
+        object MenuItem22: TMenuItem
+          Caption = '-'
+        end
+        object MenuItem23: TMenuItem
+          Action = Aktivitet_Start
+        end
+        object MenuItem24: TMenuItem
+          Action = Priskategori_Start
+        end
+        object MenuItem27: TMenuItem
+          Action = MaerkeDef_Start
+        end
+      end
+      object MenuItem17: TMenuItem
+        Action = Option
+      end
+      object MenuItem14: TMenuItem
+        Action = Rapport_Designer
+      end
+      object MenuItem19: TMenuItem
+        Action = PostNrRediger
+      end
+      object MenuItem18: TMenuItem
+        Action = Database
+      end
+    end
+    object MenuItem1: TMenuItem
+      Caption = '&Hjælp'
+      object MenuItem2: TMenuItem
+        Action = Help
+        Caption = 'Hjælp'
+      end
+      object MenuItem3: TMenuItem
+        Caption = 'Tutorial'
+      end
+      object MenuItem38: TMenuItem
+        Action = VigImport
+      end
+      object MenuItem4: TMenuItem
+        Caption = '-'
+      end
+      object MenuItem5: TMenuItem
+        Action = About
+      end
+    end
+  end
+  object ActionList1: TActionList
+    Images = MainDataModule.ImageList1
+    left = 684
+    top = 60
+    object Luk: TAction
+      Caption = 'Luk'
+      Hint = 'Exit'
+      ImageIndex = 0
+      OnExecute = LukExecute
+      ShortCut = 16460
+    end
+    object Kassekladde_Start: TAction
+      Category = 'Diverse'
+      Caption = 'Kassekladde'
+      Hint = 'Kassekladde'
+      ImageIndex = 1
+      OnExecute = Kassekladde_StartExecute
+      ShortCut = 116
+    end
+    object PeriodeDef_Start: TAction
+      Category = 'Diverse'
+      Caption = '&Periode'
+      Hint = 'Definer/ændre periode'
+      ImageIndex = 2
+      OnExecute = PeriodeDef_StartExecute
+    end
+    object MomsDef_Start: TAction
+      Category = 'Diverse'
+      Caption = 'Moms'
+      Hint = 'Momskoder defineres'
+      ImageIndex = 3
+      OnExecute = MomsDef_StartExecute
+    end
+    object Kontoplan_Start: TAction
+      Category = 'Diverse'
+      Caption = '&Kontoplan'
+      Hint = 'Kontoplan'
+      ImageIndex = 4
+      OnExecute = Kontoplan_StartExecute
+      ShortCut = 16464
+    end
+    object OkoMaerke_Start: TAction
+      Category = 'Diverse'
+      Caption = '&Økomærker'
+      Hint = 'Definition af økomærker / Formål'
+      ImageIndex = 5
+      OnExecute = OkoMaerke_StartExecute
+      ShortCut = 16461
+    end
+    object KassekladdeDef_Start: TAction
+      Category = 'Diverse'
+      Caption = '&Kassekladde'
+      Hint = 'Definer kassekladder'
+      ImageIndex = 1
+      OnExecute = KassekladdeDef_StartExecute
+    end
+    object Rapport_Designer: TAction
+      Category = 'Diverse'
+      Caption = 'Designer'
+      Hint = 'Viser rapport-designer'
+      ImageIndex = 6
+      ShortCut = 16452
+    end
+    object About: TAction
+      Category = 'Hjaelp'
+      Caption = 'About'
+      Hint = 'Om programmet'
+      ImageIndex = 9
+    end
+    object Help: TAction
+      Category = 'Hjaelp'
+      Caption = 'Help'
+      Hint = 'Hjælp oversigt'
+      ImageIndex = 7
+    end
+    object SeKontoAction: TAction
+      Category = 'Okonomi'
+      Caption = 'Se konto...'
+      Hint = 'Se konto'
+      ImageIndex = 8
+      OnExecute = SeKontoActionExecute
+      ShortCut = 8308
+    end
+    object Option: TAction
+      Category = 'Diverse'
+      Caption = '&Option'
+      Hint = 'Indstillinger'
+      ImageIndex = 10
+      OnExecute = OptionExecute
+    end
+    object Database: TAction
+      Category = 'Diverse'
+      Caption = '&Database'
+      Hint = 'Se databasen'
+      ImageIndex = 11
+      OnExecute = DatabaseExecute
+    end
+    object PostNrRediger: TAction
+      Category = 'Diverse'
+      Caption = 'Postnr'
+      Hint = 'Rediger postnumre'
+      ImageIndex = 12
+      OnExecute = PostNrRedigerExecute
+    end
+    object MedlemOplys: TAction
+      Category = 'Medlem'
+      Caption = 'Se og ændre medlemsoplysninger'
+      ImageIndex = 1
+      OnExecute = MedlemOplysExecute
+      ShortCut = 114
+    end
+    object Aktivitet_Start: TAction
+      Category = 'Diverse'
+      Caption = '&Aktivitet'
+      Hint = 'Aktiviteter'
+      ImageIndex = 13
+      OnExecute = Aktivitet_StartExecute
+    end
+    object Priskategori_Start: TAction
+      Category = 'Diverse'
+      Caption = 'P&ris for aktivitet'
+      Hint = 'Opret priser på aktiviteter'
+      ImageIndex = 14
+      OnExecute = Priskategori_StartExecute
+    end
+    object Aktivitet_Massetildeling: TAction
+      Category = 'Aktivitet'
+      Caption = '&Masse tildeling'
+      Hint = 'Sætter medlemmer på aktivitet'
+      ImageIndex = 15
+      OnExecute = Aktivitet_MassetildelingExecute
+    end
+    object MaerkeDef_Start: TAction
+      Category = 'Diverse'
+      Caption = 'M&ærke'
+      Hint = 'Opret mærke'
+      ImageIndex = 16
+      OnExecute = MaerkeDef_StartExecute
+    end
+    object Forening_Skift: TAction
+      Category = 'Forening'
+      Caption = 'Skift forening'
+      Hint = 'Skift / ændre forening'
+      ImageIndex = 17
+      OnExecute = Forening_SkiftExecute
+    end
+    object MedlemFind: TAction
+      Category = 'Medlem'
+      Caption = 'Fin&d medlemmer...'
+      Hint = 'Find medlemmer'
+      ImageIndex = 18
+      OnExecute = MedlemFindExecute
+      ShortCut = 16498
+    end
+    object Kontigent_Manual_Gen: TAction
+      Category = 'Kontingent'
+      Caption = 'Lav indbetalingskort'
+      Hint = 'Indbetalingskort kan oprettes'
+      ImageIndex = 19
+      OnExecute = Kontigent_Manual_GenExecute
+    end
+    object RabatDef_Start: TAction
+      Category = 'Diverse'
+      Caption = '&Rabat'
+      Hint = 'Definer rabatter'
+      ImageIndex = 20
+      OnExecute = RabatDef_StartExecute
+    end
+    object Kontingent_SeAendre: TAction
+      Category = 'Kontingent'
+      Caption = '&Indtast/ændre indbetaling'
+      Hint = 'Se og ændre indbetalingskort'
+      ImageIndex = 21
+      OnExecute = Kontingent_SeAendreExecute
+      ShortCut = 117
+    end
+    object Kontingent_Aktivitet_Gen: TAction
+      Category = 'Kontingent'
+      Caption = 'Lav indb. fra aktivitet'
+      Hint = 'Generer indbetalingskort ud fra aktivitet'
+      ImageIndex = 22
+      OnExecute = Kontingent_Aktivitet_GenExecute
+    end
+    object Udskriv_Send: TAction
+      Category = 'Kontingent'
+      Caption = 'Udskriv indbetalingskort eller send...'
+      Hint = 'Udskriv indbetalingskort eller send mail.'
+      ImageIndex = 23
+      OnExecute = Udskriv_SendExecute
+    end
+    object Kontingent_edit_Tekst: TAction
+      Category = 'Kontingent'
+      Caption = 'Tekst til indbetalingskort'
+      Hint = 'Ret tekster til indbetalingskort'
+      ImageIndex = 24
+      OnExecute = Kontingent_edit_TekstExecute
+    end
+    object VigImport: TAction
+      Category = 'Hjaelp'
+      Caption = '&Importer Vig'
+      Hint = 'Indlæser dele af Vigs database...'
+      ImageIndex = 25
+      OnExecute = VigImportExecute
+    end
+  end
+end
