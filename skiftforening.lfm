@@ -1,0 +1,1631 @@
+object SkiftForeningForm: TSkiftForeningForm
+  Left = 500
+  Height = 432
+  Top = 203
+  Width = 570
+  Caption = 'Skift / ændre forening...'
+  ClientHeight = 432
+  ClientWidth = 570
+  Menu = MainMenu1
+  OnCreate = FormCreate
+  LCLVersion = '1.6.2.0'
+  object ToolBar1: TToolBar
+    Left = 0
+    Height = 26
+    Top = 0
+    Width = 570
+    Caption = 'ToolBar1'
+    Images = ImageList1
+    TabOrder = 0
+    object ToolButton1: TToolButton
+      Left = 1
+      Top = 2
+      Action = Luk
+    end
+    object ToolButton3: TToolButton
+      Left = 217
+      Top = 2
+      Action = Help
+    end
+    object DBNavigator1: TDBNavigator
+      Left = 24
+      Height = 22
+      Top = 2
+      Width = 193
+      BevelOuter = bvNone
+      ChildSizing.EnlargeHorizontal = crsScaleChilds
+      ChildSizing.EnlargeVertical = crsScaleChilds
+      ChildSizing.ShrinkHorizontal = crsScaleChilds
+      ChildSizing.ShrinkVertical = crsScaleChilds
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 100
+      ClientHeight = 22
+      ClientWidth = 193
+      DataSource = Datasource1
+      OnClick = DBNavigator1Click
+      Options = []
+      TabOrder = 0
+      VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast, nbInsert, nbDelete, nbPost]
+    end
+  end
+  object PageControl1: TPageControl
+    Left = 0
+    Height = 406
+    Top = 26
+    Width = 570
+    ActivePage = TabSheet1
+    Align = alClient
+    Images = ImageList1
+    TabIndex = 0
+    TabOrder = 1
+    object TabSheet1: TTabSheet
+      Caption = 'Generelt'
+      ClientHeight = 378
+      ClientWidth = 562
+      ImageIndex = 2
+      object Label1: TLabel
+        Left = 4
+        Height = 15
+        Top = 16
+        Width = 60
+        Caption = '&Betegnelse:'
+        FocusControl = DBEditNavn
+        ParentColor = False
+      end
+      object DBEditNavn: TDBEdit
+        Left = 76
+        Height = 23
+        Hint = 'Forenings navn'
+        Top = 16
+        Width = 208
+        DataField = 'navn'
+        DataSource = Datasource1
+        CharCase = ecNormal
+        MaxLength = 0
+        TabOrder = 0
+      end
+      object Label2: TLabel
+        Left = 4
+        Height = 15
+        Top = 48
+        Width = 61
+        Caption = 'Forkortelse:'
+        ParentColor = False
+      end
+      object DBEditForkort: TDBEdit
+        Left = 76
+        Height = 23
+        Hint = 'Kort navn for forening'
+        Top = 48
+        Width = 80
+        DataField = 'kortnavn'
+        DataSource = Datasource1
+        CharCase = ecNormal
+        MaxLength = 0
+        TabOrder = 1
+      end
+      object Label3: TLabel
+        Left = 4
+        Height = 15
+        Top = 80
+        Width = 22
+        Caption = '&Adr:'
+        FocusControl = DBEditAdr
+        ParentColor = False
+      end
+      object DBEditAdr: TDBEdit
+        Left = 76
+        Height = 23
+        Hint = 'adr på forening'
+        Top = 80
+        Width = 208
+        DataField = 'adr'
+        DataSource = Datasource1
+        CharCase = ecNormal
+        MaxLength = 0
+        TabOrder = 2
+      end
+      object Label4: TLabel
+        Left = 4
+        Height = 15
+        Top = 108
+        Width = 37
+        Caption = '&Postnr:'
+        FocusControl = DBPostNr
+        ParentColor = False
+      end
+      object DBPostNr: TDBEdit
+        Left = 76
+        Height = 23
+        Hint = 'Postnr'
+        Top = 108
+        Width = 56
+        DataField = 'postnr'
+        DataSource = Datasource1
+        CharCase = ecNormal
+        MaxLength = 0
+        TabOrder = 3
+        OnExit = DBPostNrExit
+      end
+      object DBText1: TDBText
+        Left = 204
+        Height = 23
+        Top = 107
+        Width = 80
+        AutoSize = False
+        DataField = 'town'
+        DataSource = Datasource1
+        ParentColor = False
+      end
+      object LandCombo: TclmCombobox
+        Left = 140
+        Height = 22
+        Top = 107
+        Width = 56
+        Columns = <        
+          item
+            Color = clWindow
+          end        
+          item
+            Color = clWindow
+            Visible = False
+          end        
+          item
+            Color = clWindow
+            Visible = False
+          end>
+        ItemHeight = 16
+        OnChange = LandComboChange
+        TabOrder = 4
+        Text = 'LandCombo'
+      end
+      object DBTelefon: TDBEdit
+        Left = 76
+        Height = 23
+        Hint = 'telefon til forening'
+        Top = 134
+        Width = 120
+        DataField = 'telefon'
+        DataSource = Datasource1
+        CharCase = ecNormal
+        MaxLength = 0
+        TabOrder = 5
+      end
+      object Label5: TLabel
+        Left = 4
+        Height = 15
+        Top = 134
+        Width = 42
+        Caption = '&Telefon:'
+        FocusControl = DBTelefon
+        ParentColor = False
+      end
+      object Label6: TLabel
+        Left = 4
+        Height = 15
+        Top = 162
+        Width = 20
+        Caption = 'Fax:'
+        FocusControl = DBFax
+        ParentColor = False
+      end
+      object DBFax: TDBEdit
+        Left = 76
+        Height = 23
+        Hint = 'fax til forening'
+        Top = 162
+        Width = 120
+        DataField = 'fax'
+        DataSource = Datasource1
+        CharCase = ecNormal
+        MaxLength = 0
+        TabOrder = 6
+      end
+      object Label8: TLabel
+        Left = 4
+        Height = 15
+        Top = 190
+        Width = 32
+        Caption = 'Email:'
+        FocusControl = DBEmail
+        ParentColor = False
+      end
+      object DBEmail: TDBEdit
+        Left = 76
+        Height = 23
+        Hint = 'email til forening'
+        Top = 190
+        Width = 208
+        DataField = 'email'
+        DataSource = Datasource1
+        CharCase = ecNormal
+        MaxLength = 0
+        TabOrder = 7
+      end
+      object DBHjemmeside: TDBEdit
+        Left = 76
+        Height = 23
+        Hint = 'foreningens hjemmeside'
+        Top = 222
+        Width = 208
+        DataField = 'hjemmeside'
+        DataSource = Datasource1
+        CharCase = ecNormal
+        MaxLength = 0
+        TabOrder = 8
+      end
+      object Label9: TLabel
+        Left = 4
+        Height = 15
+        Top = 222
+        Width = 70
+        Caption = 'Hjemmeside:'
+        FocusControl = DBHjemmeside
+        ParentColor = False
+      end
+      object GroupBox1: TGroupBox
+        Left = 4
+        Height = 65
+        Top = 254
+        Width = 280
+        Caption = ' Periode '
+        ClientHeight = 45
+        ClientWidth = 276
+        TabOrder = 9
+        object ComboPeriode: TclmCombobox
+          Left = 14
+          Height = 22
+          Top = 8
+          Width = 240
+          Columns = <          
+            item
+              Color = clWindow
+              Width = 330
+            end          
+            item
+              Color = clWindow
+              Visible = False
+            end>
+          ItemHeight = 16
+          TabOrder = 0
+          Text = 'ComboPeriode'
+        end
+      end
+      object GroupBox2: TGroupBox
+        Left = 316
+        Height = 80
+        Top = 6
+        Width = 161
+        Caption = ' Default land og postnr '
+        ClientHeight = 60
+        ClientWidth = 157
+        TabOrder = 10
+        object Label10: TLabel
+          Left = 14
+          Height = 15
+          Top = 32
+          Width = 37
+          Caption = 'Postnr:'
+          ParentColor = False
+        end
+        object Label7: TLabel
+          Left = 14
+          Height = 15
+          Top = 2
+          Width = 29
+          Caption = 'Land:'
+          ParentColor = False
+        end
+        object DBPostNrDefault: TDBEdit
+          Left = 76
+          Height = 23
+          Hint = 'Postnr'
+          Top = 32
+          Width = 56
+          DataField = 'postnrdefault'
+          DataSource = Datasource1
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 1
+        end
+        object LandCombo1: TclmCombobox
+          Left = 76
+          Height = 22
+          Top = 2
+          Width = 56
+          Columns = <          
+            item
+              Color = clWindow
+            end          
+            item
+              Color = clWindow
+              Visible = False
+            end          
+            item
+              Color = clWindow
+              Visible = False
+            end>
+          ItemHeight = 16
+          OnChange = LandCombo1Change
+          TabOrder = 0
+          Text = 'LandCombo1'
+        end
+      end
+    end
+    object TabSheet2: TTabSheet
+      Caption = 'Indbetaling'
+      ClientHeight = 378
+      ClientWidth = 562
+      ImageIndex = 3
+      object GroupBox3: TGroupBox
+        Left = 4
+        Height = 56
+        Hint = 'Indstilling til FI kort'
+        Top = 6
+        Width = 384
+        Caption = ' Indbetalingskort '
+        ClientHeight = 36
+        ClientWidth = 380
+        TabOrder = 0
+        object DBGiro: TDBEdit
+          Left = 78
+          Height = 23
+          Hint = 'Gironr / indbetalingskonto'
+          Top = 2
+          Width = 120
+          DataField = 'giro'
+          DataSource = Datasource1
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 0
+        end
+        object Label11: TLabel
+          Left = 6
+          Height = 16
+          Top = 0
+          Width = 65
+          Caption = 'Indb konto: '
+          FocusControl = DBGiro
+          ParentColor = False
+        end
+        object DBComboKortArt: TDBComboBox
+          Left = 262
+          Height = 23
+          Hint = 'KortArt'
+          Top = 0
+          Width = 100
+          DataField = 'betalingskort'
+          DataSource = Datasource1
+          ItemHeight = 15
+          Items.Strings = (
+            '01'
+            '04'
+            '71'
+            '73'
+            '75'
+          )
+          MaxLength = 0
+          Style = csDropDownList
+          TabOrder = 1
+        end
+        object Label12: TLabel
+          Left = 214
+          Height = 16
+          Top = 0
+          Width = 40
+          Caption = 'Kortart:'
+          ParentColor = False
+        end
+      end
+      object GroupBox4: TGroupBox
+        Left = 4
+        Height = 81
+        Top = 70
+        Width = 384
+        Caption = ' Kortart 71 oplysninger '
+        ClientHeight = 61
+        ClientWidth = 380
+        TabOrder = 1
+        object Label13: TLabel
+          Left = 6
+          Height = 16
+          Top = 2
+          Width = 38
+          Caption = 'PBS nr:'
+          ParentColor = False
+        end
+        object DBK71PBSNr: TDBEdit
+          Left = 78
+          Height = 23
+          Hint = 'Gironr / indbetalingskonto'
+          Top = 2
+          Width = 120
+          DataField = 'k71pbsnr'
+          DataSource = Datasource1
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 0
+        end
+        object Label14: TLabel
+          Left = 6
+          Height = 16
+          Top = 32
+          Width = 42
+          Caption = 'Debi nr:'
+          ParentColor = False
+        end
+        object DBDebiNr: TDBEdit
+          Left = 78
+          Height = 23
+          Hint = 'Gironr debitornr'
+          Top = 32
+          Width = 120
+          DataField = 'k71debi'
+          DataSource = Datasource1
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 1
+        end
+      end
+      object GroupBox5: TGroupBox
+        Left = 4
+        Height = 168
+        Top = 158
+        Width = 384
+        Caption = ' PBS oplysninger '
+        ClientHeight = 148
+        ClientWidth = 380
+        TabOrder = 2
+        object DBPBSNr: TDBEdit
+          Left = 78
+          Height = 23
+          Hint = 'Angiver det af NETS tildelte nr.'
+          Top = 2
+          Width = 120
+          DataField = 'pbsnr'
+          DataSource = Datasource1
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 0
+        end
+        object Label15: TLabel
+          Left = 6
+          Height = 16
+          Top = 2
+          Width = 38
+          Caption = 'PBS nr:'
+          ParentColor = False
+        end
+        object DBCheckBox1: TDBCheckBox
+          Left = 246
+          Height = 23
+          Hint = 'Kører PBS i drift eller test'
+          Top = 0
+          Width = 90
+          Caption = 'PBS i drift:'
+          DataField = 'pbsdrift'
+          DataSource = Datasource1
+          ParentBiDiMode = False
+          TabOrder = 1
+          ValueChecked = '1'
+          ValueUnchecked = '0'
+        end
+        object Label16: TLabel
+          Left = 7
+          Height = 16
+          Top = 32
+          Width = 16
+          Caption = '&SE:'
+          FocusControl = DBSE
+          ParentColor = False
+        end
+        object DBSE: TDBEdit
+          Left = 78
+          Height = 23
+          Hint = 'SE- nummer - har I ikke fås et fiktivt af NETS.'
+          Top = 32
+          Width = 120
+          DataField = 'se'
+          DataSource = Datasource1
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 2
+        end
+        object Label17: TLabel
+          Left = 6
+          Height = 16
+          Top = 64
+          Width = 13
+          Caption = '&FI:'
+          FocusControl = DBFI
+          ParentColor = False
+        end
+        object DBFI: TDBEdit
+          Left = 78
+          Height = 23
+          Hint = 'FI-kreditornr: Fås af din bank'
+          Top = 64
+          Width = 120
+          DataField = 'fi'
+          DataSource = Datasource1
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 3
+        end
+        object Label18: TLabel
+          Left = 6
+          Height = 16
+          Top = 92
+          Width = 61
+          Caption = '&Bankkonto:'
+          FocusControl = DBBankReg
+          ParentColor = False
+        end
+        object DBBankReg: TDBEdit
+          Left = 78
+          Height = 23
+          Hint = 'FI-kreditornr: Fås af din bank'
+          Top = 92
+          Width = 48
+          DataField = 'bankregnr'
+          DataSource = Datasource1
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 4
+        end
+        object DBBankkonto: TDBEdit
+          Left = 134
+          Height = 23
+          Hint = 'Bankkonto'
+          Top = 92
+          Width = 96
+          DataField = 'bankkonto'
+          DataSource = Datasource1
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 5
+        end
+        object DBDataLevNr: TDBEdit
+          Left = 78
+          Height = 23
+          Hint = 'Angiver det af PBS oplyste dataleverandørnr.'
+          Top = 120
+          Width = 120
+          DataField = 'datalevnr'
+          DataSource = Datasource1
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 6
+        end
+        object Label19: TLabel
+          Left = 6
+          Height = 16
+          Top = 120
+          Width = 57
+          Caption = 'Datalev nr:'
+          FocusControl = DBDataLevNr
+          ParentColor = False
+        end
+      end
+    end
+    object TabSheet3: TTabSheet
+      Caption = 'Mail'
+      ClientHeight = 378
+      ClientWidth = 562
+      ImageIndex = 4
+      object DBRadioGroup1: TDBRadioGroup
+        Left = 4
+        Height = 49
+        Hint = 'Vælg mailsystem'
+        Top = 6
+        Width = 304
+        Caption = ' Mail med... '
+        Columns = 2
+        DataField = 'mailsystem'
+        DataSource = Datasource1
+        Items.Strings = (
+          'Egen'
+          'Holbæk'
+        )
+        TabOrder = 0
+        Values.Strings = (
+          '0'
+          '1'
+        )
+      end
+      object GroupBox6: TGroupBox
+        Left = 4
+        Height = 192
+        Top = 62
+        Width = 425
+        Caption = ' SMTP - send mailoplysninger '
+        ClientHeight = 172
+        ClientWidth = 421
+        TabOrder = 1
+        object DBSMTPAfsender: TDBEdit
+          Left = 78
+          Height = 23
+          Hint = 'Brugerens id hos internet udbyderen'
+          Top = 2
+          Width = 336
+          DataField = 'smtpafsender'
+          DataSource = Datasource1
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 0
+        end
+        object Label20: TLabel
+          Left = 6
+          Height = 16
+          Top = 2
+          Width = 51
+          Caption = '&Afsender:'
+          FocusControl = DBSMTPAfsender
+          ParentColor = False
+        end
+        object DBBrugerId: TDBEdit
+          Left = 78
+          Height = 23
+          Hint = 'Brugerens id hos internet udbyderen'
+          Top = 30
+          Width = 336
+          DataField = 'brugerid'
+          DataSource = Datasource1
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 1
+        end
+        object Label21: TLabel
+          Left = 6
+          Height = 16
+          Top = 30
+          Width = 52
+          Caption = '&Bruger id:'
+          FocusControl = DBBrugerId
+          ParentColor = False
+        end
+        object Label22: TLabel
+          Left = 6
+          Height = 16
+          Top = 56
+          Width = 54
+          Caption = '&Password:'
+          FocusControl = DBSMTPPassword
+          ParentColor = False
+        end
+        object DBSMTPPassword: TDBEdit
+          Left = 78
+          Height = 23
+          Hint = 'Brugerens password hos internet udbyderen'
+          Top = 56
+          Width = 336
+          DataField = 'smtppassword'
+          DataSource = Datasource1
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 2
+        end
+        object Label23: TLabel
+          Left = 6
+          Height = 16
+          Top = 81
+          Width = 69
+          Caption = '&SMTP server:'
+          FocusControl = DBSMTPServer
+          ParentColor = False
+        end
+        object DBSMTPServer: TDBEdit
+          Left = 78
+          Height = 23
+          Hint = 'SMTP server f.eks: vip.cybercity.dk'
+          Top = 81
+          Width = 336
+          DataField = 'smtpserver'
+          DataSource = Datasource1
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 3
+        end
+        object Label24: TLabel
+          Left = 6
+          Height = 16
+          Top = 112
+          Width = 29
+          Caption = 'P&ort: '
+          FocusControl = DBSMTPPort
+          ParentColor = False
+        end
+        object DBSMTPPort: TDBEdit
+          Left = 78
+          Height = 23
+          Hint = 'SMTP port'
+          Top = 112
+          Width = 48
+          DataField = 'port'
+          DataSource = Datasource1
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 4
+        end
+        object DBSMTPLogon: TDBCheckBox
+          Left = 142
+          Height = 23
+          Hint = 'Brug log on'
+          Top = 112
+          Width = 90
+          Caption = 'Logon SMTP'
+          DataField = 'smtplogon'
+          DataSource = Datasource1
+          TabOrder = 5
+          ValueChecked = '1'
+          ValueUnchecked = '0'
+        end
+        object DBMailModtaget: TDBCheckBox
+          Left = 246
+          Height = 23
+          Hint = 'Giver melding tilbage om en afsendt mail er modtaget/læst'
+          Top = 112
+          Width = 104
+          Caption = 'Mail modtaget'
+          DataField = 'mailreadreceipt'
+          DataSource = Datasource1
+          TabOrder = 6
+          ValueChecked = '1'
+          ValueUnchecked = '0'
+        end
+        object DBMaxBurst: TDBEdit
+          Left = 78
+          Height = 23
+          Hint = 'Antal mails i hver udsendelse'
+          Top = 140
+          Width = 48
+          DataField = 'mailmaxburst'
+          DataSource = Datasource1
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 7
+        end
+        object Label25: TLabel
+          Left = 6
+          Height = 16
+          Top = 140
+          Width = 60
+          Caption = 'B&urst antal:'
+          FocusControl = DBMaxBurst
+          ParentColor = False
+        end
+        object DBTidMellemBurst: TDBEdit
+          Left = 278
+          Height = 23
+          Hint = 'Tid i minutter som der skal gå inden ny udsendelse'
+          Top = 140
+          Width = 48
+          DataField = 'mailtidimellemburst'
+          DataSource = Datasource1
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 8
+        end
+        object Label26: TLabel
+          Left = 142
+          Height = 16
+          Top = 140
+          Width = 129
+          Caption = 'Tid mellem burst (min): '
+          FocusControl = DBTidMellemBurst
+          ParentColor = False
+        end
+      end
+      object GroupBox7: TGroupBox
+        Left = 4
+        Height = 104
+        Top = 262
+        Width = 425
+        Caption = ' Pop / modtag mail-oplysninger '
+        ClientHeight = 84
+        ClientWidth = 421
+        TabOrder = 2
+        object Label27: TLabel
+          Left = 6
+          Height = 16
+          Top = 2
+          Width = 67
+          Caption = 'POP&3 server:'
+          FocusControl = DBPop3Server
+          ParentColor = False
+        end
+        object DBPop3Server: TDBEdit
+          Left = 78
+          Height = 23
+          Hint = 'Pop 3 server hos din internet udbyder'
+          Top = 2
+          Width = 336
+          DataField = 'Pop3Server'
+          DataSource = Datasource1
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 0
+        end
+        object Label28: TLabel
+          Left = 6
+          Height = 16
+          Top = 30
+          Width = 52
+          Caption = 'Bruger id:'
+          FocusControl = DBPop3BrugerId
+          ParentColor = False
+        end
+        object DBPop3BrugerId: TDBEdit
+          Left = 78
+          Height = 23
+          Hint = 'Pop 3 bruger id hos din internet udbyder'
+          Top = 30
+          Width = 336
+          DataField = 'AccountName'
+          DataSource = Datasource1
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 1
+        end
+        object Label29: TLabel
+          Left = 6
+          Height = 16
+          Top = 56
+          Width = 54
+          Caption = 'Pass&word:'
+          FocusControl = DBPop3Password
+          ParentColor = False
+        end
+        object DBPop3Password: TDBEdit
+          Left = 78
+          Height = 23
+          Hint = 'Pop3 password'
+          Top = 56
+          Width = 336
+          DataField = 'Password'
+          DataSource = Datasource1
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 2
+        end
+      end
+    end
+    object TabSheet4: TTabSheet
+      Caption = 'Server'
+      ClientHeight = 378
+      ClientWidth = 562
+      ImageIndex = 5
+      object GroupBox8: TGroupBox
+        Left = 4
+        Height = 369
+        Top = 6
+        Width = 304
+        Caption = ' Data på internettet '
+        ClientHeight = 349
+        ClientWidth = 300
+        TabOrder = 0
+        object Label30: TLabel
+          Left = 6
+          Height = 15
+          Top = 0
+          Width = 47
+          Caption = '&Kending:'
+          FocusControl = DBKending
+          ParentColor = False
+        end
+        object DBKending: TDBEdit
+          Left = 86
+          Height = 23
+          Hint = 'Navn som kendetegner dig som bruger - et navn I selv bestemmer'
+          Top = 0
+          Width = 208
+          DataField = 'FTPVigNavn'
+          DataSource = Datasource1
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 0
+        end
+        object Label31: TLabel
+          Left = 6
+          Height = 15
+          Top = 32
+          Width = 42
+          Caption = '&Telefon:'
+          FocusControl = DBFTPBrugerTlf
+          ParentColor = False
+        end
+        object DBFTPBrugerTlf: TDBEdit
+          Left = 86
+          Height = 23
+          Hint = 'Dit telefonnr som en anden kan ringe til når du er på.'
+          Top = 32
+          Width = 208
+          DataField = 'ftpbrugertlf'
+          DataSource = Datasource1
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 1
+        end
+        object Label32: TLabel
+          Left = 6
+          Height = 15
+          Top = 60
+          Width = 76
+          Caption = '&Sti på internet:'
+          FocusControl = DBBibloPaaNet
+          ParentColor = False
+        end
+        object DBBibloPaaNet: TDBEdit
+          Left = 86
+          Height = 23
+          Hint = 'Bibliotek på internet server hvor data er/skal placeres'
+          Top = 60
+          Width = 208
+          DataField = 'ftpBibloPaaNet'
+          DataSource = Datasource1
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 2
+        end
+        object DBCheckAktiverDPI: TDBCheckBox
+          Left = 6
+          Height = 23
+          Top = 88
+          Width = 26
+          DataField = 'ftpcheckbase'
+          DataSource = Datasource1
+          TabOrder = 6
+          TabStop = True
+          ValueChecked = '1'
+          ValueUnchecked = '0'
+        end
+        object Label33: TLabel
+          Left = 86
+          Height = 52
+          Top = 92
+          Width = 202
+          AutoSize = False
+          Caption = 'Aktiver at database hentes fra internettet og lægges op igen efter brug'
+          ParentColor = False
+          WordWrap = True
+        end
+        object DBCheckAskDataUp: TDBCheckBox
+          Left = 6
+          Height = 23
+          Top = 144
+          Width = 26
+          DataField = 'ASKDATAUP'
+          DataSource = Datasource1
+          TabOrder = 7
+          TabStop = True
+          ValueChecked = '1'
+          ValueUnchecked = '0'
+        end
+        object Label34: TLabel
+          Left = 86
+          Height = 36
+          Top = 144
+          Width = 202
+          AutoSize = False
+          Caption = 'Spørg om data skal lægges op efter brug'
+          ParentColor = False
+          WordWrap = True
+        end
+        object DBCheckSnuser: TDBCheckBox
+          Left = 6
+          Height = 23
+          Top = 184
+          Width = 26
+          DataField = 'SNUSER'
+          DataSource = Datasource1
+          TabOrder = 5
+          TabStop = True
+          ValueChecked = '1'
+          ValueUnchecked = '0'
+        end
+        object Label35: TLabel
+          Left = 86
+          Height = 36
+          Top = 184
+          Width = 202
+          AutoSize = False
+          Caption = 'Snuser - hent data ned men læg det ikke op'
+          ParentColor = False
+          WordWrap = True
+        end
+        object DBCheckSnuser1: TDBCheckBox
+          Left = 6
+          Height = 23
+          Top = 224
+          Width = 26
+          DataField = 'MEDTAGSKABELONER'
+          DataSource = Datasource1
+          TabOrder = 4
+          TabStop = True
+          ValueChecked = '1'
+          ValueUnchecked = '0'
+        end
+        object Label36: TLabel
+          Left = 86
+          Height = 23
+          Top = 224
+          Width = 202
+          AutoSize = False
+          Caption = 'Medtag skabeloner'
+          ParentColor = False
+          WordWrap = True
+        end
+        object DBCheckLogning: TDBCheckBox
+          Left = 6
+          Height = 23
+          Top = 252
+          Width = 26
+          DataField = 'LOGNING'
+          DataSource = Datasource1
+          TabOrder = 3
+          TabStop = True
+          ValueChecked = '1'
+          ValueUnchecked = '0'
+        end
+        object Label37: TLabel
+          Left = 86
+          Height = 23
+          Top = 252
+          Width = 202
+          AutoSize = False
+          Caption = 'Logning af adgang til internet'
+          ParentColor = False
+          WordWrap = True
+        end
+        object ButtonTest: TButton
+          Left = 7
+          Height = 25
+          Hint = 'Afprøver internetforbindelsen'
+          Top = 280
+          Width = 137
+          Caption = 'Test internet forbindelse'
+          OnClick = ButtonTestClick
+          TabOrder = 8
+        end
+        object ButtonFjernSpaerring: TButton
+          Left = 152
+          Height = 25
+          Hint = 'Fjern evt. spærring på nettet'
+          Top = 280
+          Width = 96
+          Caption = 'Fjern spærring'
+          OnClick = ButtonFjernSpaerringClick
+          TabOrder = 9
+        end
+        object ButtonLaegDataPaaInternet: TButton
+          Left = 6
+          Height = 25
+          Hint = 'Læg data op første gang'
+          Top = 312
+          Width = 138
+          Caption = 'Læg data op på internet'
+          OnClick = ButtonLaegDataPaaInternetClick
+          TabOrder = 10
+        end
+      end
+      object GroupBox9: TGroupBox
+        Left = 316
+        Height = 136
+        Top = 6
+        Width = 241
+        Caption = ' FTP '
+        ClientHeight = 116
+        ClientWidth = 237
+        TabOrder = 1
+        object DBFTPHost: TDBEdit
+          Left = 70
+          Height = 23
+          Hint = 'Host f.eks.'
+          Top = 0
+          Width = 160
+          DataField = 'FTPHOST'
+          DataSource = Datasource1
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 0
+        end
+        object Label38: TLabel
+          Left = 6
+          Height = 15
+          Top = 0
+          Width = 28
+          Caption = '&Host:'
+          FocusControl = DBFTPHost
+          ParentColor = False
+        end
+        object Label39: TLabel
+          Left = 6
+          Height = 15
+          Top = 32
+          Width = 53
+          Caption = '&Password:'
+          FocusControl = DBFTPPassword
+          ParentColor = False
+        end
+        object DBFTPPassword: TDBEdit
+          Left = 70
+          Height = 23
+          Hint = 'FTP password'
+          Top = 32
+          Width = 160
+          DataField = 'FTPPASSWORD'
+          DataSource = Datasource1
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 1
+        end
+        object Label40: TLabel
+          Left = 6
+          Height = 15
+          Top = 60
+          Width = 25
+          Caption = 'P&ort:'
+          FocusControl = DBFTPPort
+          ParentColor = False
+        end
+        object DBFTPPort: TDBEdit
+          Left = 70
+          Height = 23
+          Hint = 'Port'
+          Top = 60
+          Width = 56
+          DataField = 'FTPPORT'
+          DataSource = Datasource1
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 2
+        end
+        object DBFTPUserId: TDBEdit
+          Left = 70
+          Height = 23
+          Hint = 'FTP user id'
+          Top = 88
+          Width = 160
+          DataField = 'FTPUSERID'
+          DataSource = Datasource1
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 3
+        end
+        object Label41: TLabel
+          Left = 6
+          Height = 15
+          Top = 88
+          Width = 51
+          Caption = 'Bruger &id:'
+          FocusControl = DBFTPUserId
+          ParentColor = False
+        end
+      end
+      object GroupBox10: TGroupBox
+        Left = 316
+        Height = 168
+        Top = 142
+        Width = 241
+        Caption = ' Proxy '
+        ClientHeight = 148
+        ClientWidth = 237
+        TabOrder = 2
+        object Label42: TLabel
+          Left = 6
+          Height = 15
+          Top = 0
+          Width = 28
+          Caption = 'Host:'
+          FocusControl = DBProxyHost
+          ParentColor = False
+        end
+        object DBProxyHost: TDBEdit
+          Left = 70
+          Height = 23
+          Hint = 'Proxyhost f.eks.'
+          Top = 0
+          Width = 160
+          DataField = 'PROXYHOST'
+          DataSource = Datasource1
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 0
+        end
+        object Label43: TLabel
+          Left = 6
+          Height = 15
+          Top = 32
+          Width = 53
+          Caption = 'Password:'
+          FocusControl = DBProxyPassword
+          ParentColor = False
+        end
+        object DBProxyPassword: TDBEdit
+          Left = 70
+          Height = 23
+          Hint = 'FTP password'
+          Top = 32
+          Width = 160
+          DataField = 'PROXYPASSWORD'
+          DataSource = Datasource1
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 1
+        end
+        object Label44: TLabel
+          Left = 6
+          Height = 15
+          Top = 60
+          Width = 25
+          Caption = 'Po&rt:'
+          FocusControl = DBProxyPort
+          ParentColor = False
+        end
+        object DBProxyPort: TDBEdit
+          Left = 71
+          Height = 23
+          Hint = 'Port'
+          Top = 61
+          Width = 56
+          DataField = 'PROXYPORT'
+          DataSource = Datasource1
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 2
+        end
+        object Label45: TLabel
+          Left = 6
+          Height = 15
+          Top = 88
+          Width = 51
+          Caption = 'Bruger id:'
+          FocusControl = DBProxyUserId
+          ParentColor = False
+        end
+        object DBProxyUserId: TDBEdit
+          Left = 71
+          Height = 23
+          Hint = 'Proxy user id'
+          Top = 88
+          Width = 160
+          DataField = 'PROXYUSERNAME'
+          DataSource = Datasource1
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 3
+        end
+        object ComboBox1: TComboBox
+          Left = 70
+          Height = 23
+          Top = 116
+          Width = 100
+          ItemHeight = 15
+          Items.Strings = (
+            'None'
+            'UserSite'
+            'Site'
+            'Open'
+            'UserPass'
+            'Transparent'
+            'HttpProxyWithFtp'
+          )
+          Style = csDropDownList
+          TabOrder = 4
+        end
+        object Label46: TLabel
+          Left = 6
+          Height = 15
+          Top = 116
+          Width = 63
+          Caption = 'Logon type:'
+          ParentColor = False
+        end
+      end
+    end
+  end
+  object ImageList1: TImageList
+    left = 368
+    top = 8
+    Bitmap = {
+      4C69060000001000000010000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      00000000000000000000000000003277CBFF3277CBFF3277CBFF3277CBFF3277
+      CBFF3277CBFF3277CBFF3277CBFF3277CBFF3277CBFF3277CBFF000000000000
+      00000000000000000000000000003277CBFF4C8CCFFF4582C0DE000305460003
+      0546000000380000002E0000002400000018000000093277CBFF000000000000
+      00000000000000000000000000003176CAFF3374C0FF77B2E8FF719EC3BF0003
+      0546000000380000002E000000240000001800000009128C4CFF009900FF0000
+      000000000000000000000000000066768BFF2F70BEFF3F88D9FF89BFEEFF2F62
+      96BF000000380000002E0000002400000018009400A4009900FF009900FF0000
+      00000000000000000000000000003074C8FF2E6EBCFF3882D6FF61A0E1FF1436
+      67FF000000380000002E000000240084006F009900FF84D086FF009900FF0099
+      00FF009900FF009900FF009900FF2F72C6FF2D6CBAFF3780D3FF64A0E0FF1436
+      67FF000000380000002E007B0077009900FF80CF82FF71CA74FF6CC870FF77CD
+      7CFF7ED082FF68C96EFF007300FF2D70C3FF2B6AB7FF347DD0FF5C99DBFF1436
+      67FF000000380000002E009900FF7ECE80FF42B846FF36B43BFF3EB844FF46BC
+      4CFF50C157FF66CA6EFF007300FF2C6DC1FF2966B4FF3279CDFF5491D5FF1436
+      67FF000000380000002E007B0077009900FF57C05BFF4ABC4FFF58C35EFF5FC6
+      66FF66CA6EFF75D07DFF007300FF2A6ABEFF2763AFFF2F74C8FF5A7696FF4E5F
+      77FF000000380000002E000000240084006F009900FF6BC970FF007300FF0073
+      00FF007300FF007300FF007300FF647388FF245EAAFF2C6FC2FF406EA7FF394A
+      62FF000000380000002E0000002400000018009400A4009900FF007300FFFFFF
+      FF00FFFFFF00FFFFFF00FFFFFF002564B7FF2159A6FF296ABDFF3B77C2FF1335
+      65FF000000380000002E0000002400000018000000090E8544FF007300FFFFFF
+      FF00FFFFFF00FFFFFF00FFFFFF002360B3FF1E54A0FF2564B7FF326EBCFF1438
+      6AFF000000380000002E0000002400000018000000092360B3FF00000000FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00000000001C529FD3215EB1FF2964B4FF1539
+      6DFF0000002E00000029000000230000001E000000180000000500000000FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00000000001C509C221F58A8EF235FB1FF163C
+      72FF000000430000003E0000003A00000026000000080000000000000000FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF0000000000000000001D53A1502059AAFF1740
+      79FF000000570000004D0000002100000000000000000000000000000000FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF007F7F7F029E9E9E3DAFAFAF81B6B6B69CA6A6A66098989817FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00ABAB
+      AB74EDEDEDF5FBFBFBFFF4F4F4FFF2F2F2FFF2F2F2FFF6F6F6FFCBCBCBCD9999
+      991CFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF0099999905C9C9C9C9FCFC
+      FCFFEDEDEDFFDCCFBFFFD2B291FFCFAA83FFD2B9A1FFDCD8D4FFE7E7E7FFE4E4
+      E4F5A5A5A55CFFFFFF00FFFFFF00FFFFFF00FFFFFF00B9B9B9A4FAFAFAFFE5DF
+      D9FFCFA06FFFE6B784FFE8C193FFDFB890FFE4BB8FFFC6935EFFD1B89DFFDFDF
+      DFFFE0E0E0F59999991CFFFFFF00FFFFFF00A1A1A144F9F9F9FDE9E8E7FFD099
+      5DFFEAB476FFD5AC82FFF7F4F1FFFFFFFFFFEAE0D7FFD2A16FFFCE965BFFD1B7
+      9DFFDFDFDFFFC3C3C3CDFFFFFF00FFFFFF00C1C1C1B8F3F3F3FFD6AF84FFE9A6
+      57FFE5A154FFD99B58FFCDA073FFCEAA88FFFFFFFFFFCDAB89FFC98641FFB778
+      3AFFE0DBD8FFE6E6E6FF98989817FFFFFF00D8D8D8E1EAEAEAFFD1924BFFE594
+      34FFDF8C2DFFD98527FFD27D1FFFD2B08FFFFFFFFFFFC0864CFFBE6D19FFB968
+      16FFD2B9A3FFDEDEDEFFA2A2A260FFFFFF00F4F4F4FAE5E5E5FFD4842AFFE38B
+      24FFDD8520FFD77F1CFFCF7D21FFF8F5F3FFD3B9A0FFBF680BFFB96208FFB35C
+      03FFC49B75FFDEDEDEFFADADAD9CFFFFFF00E6E6E6F0E4E4E4FFCF8736FFE38B
+      24FFDD8520FFD77F1CFFCC9964FFFFFFFFFFC07D38FFBF680BFFB96208FFB35C
+      03FFCCAA8AFFDFDFDFFFA6A6A681FFFFFF00CCCCCCCFE7E7E7FFD29959FFE38B
+      24FFDD8520FFD7801DFFCC7C25FFC68540FFC47013FFBF690CFFB96208FFB15B
+      03FFDCCEC0FFDDDDDDFF9898983DFFFFFF00B3B3B392EFEFEFFFDDCEBEFFD986
+      27FFDD8C2AFFDA963EFFD5B998FFFFFFFFFFCB9A5DFFC6822EFFBB670FFFB882
+      4CFFE5E5E5FFD3D3D3F57E7E7E02FFFFFF0099999905D9D9D9E8E2E2E2FFD8B5
+      8EFFD3872DFFD9973FFFC6965FFFD2BBA7FFC78D43FFC6822EFFB57433FFE4DD
+      D8FFDFDFDFFF9F9F9F74FFFFFF00FFFFFF00FFFFFF009F9F9F41ECECECFCDEDE
+      DEFFDECFC0FFCA9155FFC0792EFFBD7120FFBC7E3BFFCCA37AFFE6E6E5FFE0E0
+      E0FFB7B7B7C9FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF009F9F9F41D3D3
+      D3E8E2E2E2FFDFDFDFFFE3E3E3FFE5E5E5FFE4E4E4FFE1E1E1FFD9D9D9FDA9A9
+      A9A497979705FFFFFF00FFFFFF00FFFFFF00FFFFFF0000000009000000210D0D
+      0D3A909090B2B1B1B1E1CBCBCBF6D9D9D9FCB9B9B9EE9C9C9CD25555557B0000
+      00360000001A00000002FFFFFF00FFFFFF00FFFFFF00FFFFFF00000000010000
+      00060000000D000000140000001C0000001D00000017000000100000000A0000
+      0004FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF0061C4
+      6E3D61C46EAA61C46EDF61C46EF461C46EF861C46EE961C46EB260C26D48FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF0061C46E0461C46EA461C4
+      6EF8A5E1BBFFBAEACCFFC5E0BEFFC5DAB4FFBDD7B0FFA6D7ACFF5DBE69FB5ABA
+      66B657B6620CFFFFFF00FFFFFF00FFFFFF0061C46E0561C46EC48CD8A2FFCDF5
+      E8FFD4EDDAFFCEEDD3FFCFDFAFFFD6DEB5FFD4D4A2FFCED0A1FFC4D0AAFF87C9
+      91FF53AF5DD14FAA590FFFFFFF00FFFFFF0061C46EA587D7A0FFC0F2DEFFC7F2
+      D6FFD5EFD5FFD0E9CFFFD5DBA6FFDCDEABFFDBCD90FFD7C88BFFC9C18EFFBDD5
+      AFFF7AC791FF4AA353B6FFFFFF0061C46E3C61C46EFAC0F3E2FFB5EFB4FFB5F0
+      ACFFC1EDB7FFD4E3B7FFD9D89CFFDAD395FFCDB56DFFC7B36DFFB5CB84FF94DF
+      9AFFAFE7CDFF469B4DFC4296494F61C46EAD98DEB5FFB5EBCCFFB1EFA7FFC9EE
+      A9FFD1EAC9FFD5CF8DFFD9CB8BFFCDB466FFBCBC67FF9AD671FF82DE73FF7ADC
+      71FF91D0A3FF88C8A4FF3D8F43B961C46EE2B3ECD2FF9BE2A2FF9DEA8DFFD4ED
+      B7FFD0EAC7FFCFB96EFFCCB166FFCBC975FF76DB67FF66D94DFF65D74DFF6CD3
+      5DFF73BB7EFFA5DBC2FF39883EE661C46EF5BEF0DCFF81D883FF77DB6DFFBFE5
+      9AFFCCDFA7FFCAA85DFFC2BD6CFFB8DA8BFFA6D860FF77D13FFF6AD046FF59BC
+      50FF63AB6CFFB2E4CEFF358239F660C36DF6BEEFDDFF73D17DFF90D16CFFBCE0
+      9EFFC7A75EFFD3B05EFFC69953FFC6BC6EFFAFD17AFFB4C46DFFAFA95FFF7BA9
+      57FF5AA367FFB1E3CEFF317E35F75EBF6AE4B0E9CFFF83D490FFBFDC8AFFC3CB
+      82FFCCA256FFDAAF5CFFDCAF5BFFC99A4BFFBF8643FFB78443FFB99A52FF96A5
+      62FF65A676FFA2D8BDFF2F7A32E85ABA66B292D7AFFFA0DEB4FF84C670FFA8D0
+      80FFC5A55CFFD0A757FFE0AA56FFDAA651FFC7984AFFB98C47FFB69B57FF819F
+      65FF79BF90FF81BE9CFF2F7A32BF56B4614653AF5DFBB5EAD3FF69BC74FF6EBD
+      71FFBEB66DFFC9A35BFFDFAB5BFFDDA858FFC1924EFF9DA958FF78B166FF5A96
+      67FFA6DCC0FF2F7A32FE2F7A325AFFFFFF004EA857B176C08DFF99D7B3FF79C0
+      80FFBCC27EFFC6A96AFFD7B169FFD6AD65FFBC9B5EFF60AD6AFF599768FF81C1
+      99FF67A97BFF2F7A32BFFFFFFF00FFFFFF0049A1520D469B4DD170B786FFAEE8
+      C7FFC0D2A0FFC5B381FFCAB47DFFCCAF78FFB9A778FF80CC95FFA0DABCFF66A8
+      7AFF2F7A32DA2F7A3218FFFFFF00FFFFFF00FFFFFF004194470D3D8F43B63A8A
+      3FFB9BC59DFFB3C29DFFBDC19CFFBEC39DFFB0D2B1FF7EC09AFF2F7A32FC2F7A
+      32BF2F7A3217FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF003684
+      3A51338037B7317D34E42F7A32F52F7A32F52F7A32E62F7A32BD2F7A325CFFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF0086C38BF582C0870EFFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF0084C28AF596CD9BFF80BE85FF79B97E0EFFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF0083C188F594CD9AFFB3E2B7FF93CB98FF77B77CFF70B2
+      740EFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF0082C087F594CC99FFB2E2B7FFA3DCAAFFB0E0B6FF8CC692FF6EB1
+      73FF66AB6B0EFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF0081BF86F593CC98FFB1E1B7FFA3DBA9FF9BD8A2FF73B477FFAFDFB4FF87C3
+      8CFF65AA69FF5DA4610EFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF007FBE
+      85F592CB97FFB1E1B6FF85C38AFF80C185FF99D7A0FF98D79FFF9FD9A5FFACDF
+      B2FF7DBB81FF58A05CF6FFFFFF00FFFFFF00FFFFFF00FFFFFF007EBD83F691CA
+      96FFB1E0B6FFD9F3DDFFF7FCF8FFA4D0A7FF7EC084FF9FD9A5FFACDEB2FF7BBB
+      80FF569F5AFBFFFFFF00FFFFFF00FFFFFF008EC993257DBC82FA90C995FFB0E0
+      B6FF85C28AFFF7FCF8FF95C297FFDDEEDFFF82C287FFABDEB1FF7BBA7FFF58A0
+      5CFF59A15DFF539C5704FFFFFF008DC9937D7DBB82FF8FC894FFB0E0B6FFA2DA
+      A8FF7FC185FFA4D0A7FFDDEEDFFF80B883FFABDEB1FF7AB97FFF569F5AFFC4E7
+      C8FF78B87CFF4E995284FFFFFF007BBB80FF8EC893FFAFDFB5FFA1DAA7FF98D7
+      9FFF97D69EFF7EC083FF82C187FFABDDB0FF79B97DFF63AE67FFC4E7C8FFC1E4
+      C4FFB9E0BEFF4F9A53FF459249117FBD84A07FBD84FF97CE9CFFADDFB3FF6FB3
+      74FF96D59DFF9DD8A3FFAADDB0FF78B87CFF72BA76FFC3E7C8FFB2DAB5FF69B8
+      6EF8569E59FF45914873418F44327FBE84197BBB80FF77B77CFF91CB97FFABDE
+      B1FF9CD7A2FFAADDB0FF77B77CFF60AC65FFAED8B2FF8BC491FF4C9750B94894
+      4C9144914822FFFFFF00FFFFFF00FFFFFF0075B67A9B9CCDA0FF6FB273FF8DC7
+      92FFAADCAFFF76B67BFF519B55FF77B77BFF509A53DD4B964F4247934B29FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF006FB274277CBB81FCB7DEBBFF67AC
+      6CFF75B67AFF4E9851FE539C57B84F99537AFFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF006AAE6E0565AA69AF60A665FD6BAE
+      6FFF4C9750FB529C56344E995222FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF0060A664315BA25FCC569F
+      5A4BFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00C89A7CBFD5A484F0D09770FBCC8F64FDCC8E
+      62FDCB8E60FDCA8C5DFDC98B5BFDC88A58FDC78856FDC68653FDC58450FDC482
+      4DFCC1834DF7B27948E38E512BBFD7AB91DCFDFAF8FEFCF5F1FFFFFCF9FFFFFC
+      F9FFFFFCF9FFFFFCF9FFFFFCFAFFFFFCFAFFFFFCFAFFFFFCFBFFFFFDFBFFFFFD
+      FCFFFBF6F3FFF8EFEAFDAB7743DBD39D7BFEFBF6F2FFE3B496FFF9E8DCFFFEF5
+      EEFFFDE9DAFFFDEADCFFFDECDEFFFDEDE1FFFEEFE4FFFEF1E7FFFFFAF6FFF9EA
+      E0FFE2AA85FFF1E4D9FFC88C50FED09670FFFDFBF9FFF1CDB1FFE3B596FFF9E9
+      DEFFFEF7F1FFFDEDE1FFFEEFE4FFFEF1E7FFFEF3EAFFFFFAF7FFF9ECE3FFE2AE
+      8AFFF0BC95FFF8F4ECFFC88C50FFCC8E66FFFDFBF9FFFDE5D3FFF1CCB2FFE3B5
+      96FFF9EAE0FFFFF9F5FFFEF3EAFFFEF4EDFFFFFBF9FFF9EDE5FFE3B08DFFF0C1
+      9EFFFCD7B7FFF8F3EDFFC88C50FFC9865BFFFDFBF9FFFDE8D7FFFDE6D4FFEDC6
+      ABFFDCAA89FFF9ECE3FFFFFBF9FFFFFCFAFFF9EEE6FFDCA887FFEDBF9CFFFCDB
+      C0FFFCDBC0FFF8F3EDFFC88C50FFC57D50FFFDFBF9FFFDE9D8FFF9E1D0FFEBCA
+      B3FFECC5A7FFE3B698FFF7E7DDFFF7E8DEFFE3B697FFECC3A4FFEAC5A9FFF8DA
+      C2FFFCDFC6FFF8F3EDFFC88D50FFC27646FFFDFBF8FFF9E3D2FFECCFB9FFF8E1
+      D0FFFDE7D6FFF4D5BDFFE9BFA0FFE9BFA2FFF4D3BDFFFDE6D4FFF7DEC9FFEBCA
+      B0FFF8DBC4FFF8F2ECFFC98C50FFBE6F3CFEFCF9F5FFECD0BCFFF9E4D6FFFEEC
+      DFFFFEEBDFFFFEEBDEFFFEEBDBFFFEEBDCFFFEEADDFFFDEADBFFFDE8D8FFF8E0
+      CDFFEACBB3FFF3EBE3FFC78B50FEA35D31DEF8F3EEFDF5ECE4FEFBF5F0FFFBF7
+      F1FFFBF7F3FFFBF8F4FFFCF9F5FFFCF9F5FFFCF9F6FFFCF9F7FFFCFAF7FFFCFA
+      F7FFF7F1ECFDEAD9CCF7AB7642DD8E512BBFB06331EFBB7038FABE773CFBC17B
+      40FBC27E42FBC28045FBC38247FBC38649FBC3864AFBC3874BFBC3874BFBC387
+      4CFABD8349F4AC7440E18E512BBFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00CDCDCD9FC9C9C9FBC4C4C4FFC0C0C0FFBBBBBBFFB6B6B6FFB0B0B0FFABAB
+      ABA7FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00D0D0D00FCCCC
+      CCABDCDCDCFFE6E3E3FFE1DEDCFFDFDCDCFFDFDCDBFFDEDBDBFFEEECECFFA5A5
+      A5FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00CFCFCF48CBCBCBE4DFDF
+      DFFFEAEAEAFFCFCAC9FFCBC6C5FFCAC4C3FFC8C3C1FFC7C1C1FFDCD9D8FF9E9E
+      9EFFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00CBCBCBFFE9E9E9FFE9E9
+      E9FFE2E1E1FFCBC6C4FF989797FF969595FF949393FF929191FFDBD7D6FF9898
+      98FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00C6C6C6FFEFEFEFFFE1E1
+      E1FFDDDDDDFFC8C3C2FFC8C2C1FFC6C1BFFFC5BFBEFFC3BDBBFFDAD6D5FF9191
+      91FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00C0C0C0FFECECECFFE0E0
+      E0FFDDDCDCFFC7C1C0FF929191FF8F8F8FFF8D8D8DFF8A8A8AFFD9D5D4FF8B8B
+      8BFFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00BBBBBBFFECECECFFDFDF
+      DFFFDAD9D9FFC6BFBEFFC4BEBCFFC3BCBBFFC1BBB9FFC0B9B8FFD7D3D3FF8484
+      84FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00B5B5B5FFECECECFFDEDE
+      DEFFD9D8D8FFC3BDBBFFC2BBBAFFC1BAB9FFA0C8A4FF50A956FFD7D3D1FF7E7E
+      7EFFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00AFAFAFFFEBEBEBFFDDDD
+      DDFFD7D5D5FFC1BBB9FFC0B9B8FFBEB8B6FF3BA142FF379437FFD6D1D0FF7878
+      78FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00A8A8A8FFEAEAEAFFDDDD
+      DDFFD5D4D3FFC0B9B7FFBEB7B6FFBDB6B4FFBBB4B3FFBBB3B1FFD4D0CFFF7373
+      73FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00A2A2A2FFF0F0F0FFE0E0
+      E0FFD4D2D2FFBEB6B5FFBCB5B4FFBBB4B2FFBAB2B1FFB9B1AFFFD4CFCEFF6D6D
+      6DFFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF009B9B9BC9B3B3B3FFD4D4
+      D4FFE1DFDFFFC5BFBDFFBDB5B3FFB9B1B0FFB9B1AEFFB7AFAEFFD3CECDFF6868
+      68FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF008F8F8F4B8A8A
+      8ACCA3A3A3FFC6C5C4FFD9D4D3FFD4CFCEFFD3CECDFFD3CECDFFE8E5E5FF6464
+      64FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF007E7E7E46797979D2747474FF707070FF6B6B6BFF676767FF636363FF6060
+      60D7FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00
+    }
+  end
+  object PopupMenu1: TPopupMenu
+    left = 400
+    top = 8
+    object MenuItem1: TMenuItem
+      Caption = '&Luk'
+      Bitmap.Data = {
+        36040000424D3604000000000000360000002800000010000000100000000100
+        2000000000000004000064000000640000000000000000000000000000000000
+        00001D53A1502059AAFF174079FF000000570000004D00000021000000000000
+        00000000000000000000FFFFFF00FFFFFF00FFFFFF00FFFFFF00000000001C50
+        9C221F58A8EF235FB1FF163C72FF000000430000003E0000003A000000260000
+        00080000000000000000FFFFFF00FFFFFF00FFFFFF00FFFFFF00000000001C52
+        9FD3215EB1FF2964B4FF15396DFF0000002E00000029000000230000001E0000
+        00180000000500000000FFFFFF00FFFFFF00FFFFFF00FFFFFF002360B3FF1E54
+        A0FF2564B7FF326EBCFF14386AFF000000380000002E00000024000000180000
+        00092360B3FF00000000FFFFFF00FFFFFF00FFFFFF00FFFFFF002564B7FF2159
+        A6FF296ABDFF3B77C2FF133565FF000000380000002E00000024000000180000
+        00090E8544FF007300FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00647388FF245E
+        AAFF2C6FC2FF406EA7FF394A62FF000000380000002E00000024000000180094
+        00A4009900FF007300FFFFFFFF00FFFFFF00FFFFFF00FFFFFF002A6ABEFF2763
+        AFFF2F74C8FF5A7696FF4E5F77FF000000380000002E000000240084006F0099
+        00FF6BC970FF007300FF007300FF007300FF007300FF007300FF2C6DC1FF2966
+        B4FF3279CDFF5491D5FF143667FF000000380000002E007B0077009900FF57C0
+        5BFF4ABC4FFF58C35EFF5FC666FF66CA6EFF75D07DFF007300FF2D70C3FF2B6A
+        B7FF347DD0FF5C99DBFF143667FF000000380000002E009900FF7ECE80FF42B8
+        46FF36B43BFF3EB844FF46BC4CFF50C157FF66CA6EFF007300FF2F72C6FF2D6C
+        BAFF3780D3FF64A0E0FF143667FF000000380000002E007B0077009900FF80CF
+        82FF71CA74FF6CC870FF77CD7CFF7ED082FF68C96EFF007300FF3074C8FF2E6E
+        BCFF3882D6FF61A0E1FF143667FF000000380000002E000000240084006F0099
+        00FF84D086FF009900FF009900FF009900FF009900FF009900FF66768BFF2F70
+        BEFF3F88D9FF89BFEEFF2F6296BF000000380000002E00000024000000180094
+        00A4009900FF009900FF000000000000000000000000000000003176CAFF3374
+        C0FF77B2E8FF719EC3BF00030546000000380000002E00000024000000180000
+        0009128C4CFF009900FF000000000000000000000000000000003277CBFF4C8C
+        CFFF4582C0DE0003054600030546000000380000002E00000024000000180000
+        00093277CBFF00000000000000000000000000000000000000003277CBFF3277
+        CBFF3277CBFF3277CBFF3277CBFF3277CBFF3277CBFF3277CBFF3277CBFF3277
+        CBFF3277CBFF0000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000
+      }
+      Hint = 'Luk vindue'
+      ImageIndex = 0
+      ShortCut = 16460
+    end
+  end
+  object ActionList1: TActionList
+    Images = ImageList1
+    left = 432
+    top = 8
+    object Luk: TAction
+      Caption = '&Luk'
+      Hint = 'Luk vindue'
+      ImageIndex = 0
+      OnExecute = LukExecute
+      ShortCut = 16460
+    end
+    object Help: TAction
+      Caption = 'Help'
+      Hint = 'Hjælp'
+      ImageIndex = 1
+      ShortCut = 16456
+    end
+  end
+  object ZQuery1: TZQuery
+    SQL.Strings = (
+      'select * from afddef'
+    )
+    Params = <>
+    left = 496
+    top = 8
+  end
+  object Datasource1: TDataSource
+    DataSet = ZQueryAfdDef
+    left = 464
+    top = 8
+  end
+  object ZQuery2: TZQuery
+    SQL.Strings = (
+      'select * from afddef'
+    )
+    Params = <>
+    left = 496
+    top = 40
+  end
+  object ZQueryPostNr: TZQuery
+    SQL.Strings = (
+      'select * from afddef'
+    )
+    Params = <>
+    left = 496
+    top = 88
+  end
+  object ZQueryAfdDef: TZQuery
+    SQL.Strings = (
+      'select * from afddef'
+    )
+    Params = <>
+    left = 320
+    top = 8
+  end
+  object MainMenu1: TMainMenu
+    left = 45
+    top = 40
+  end
+end
